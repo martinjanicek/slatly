@@ -10,11 +10,22 @@ struct BulkTiltView: View {
     let client: OverkizClient
     let devices: [OverkizDevice]
 
-    @State private var tilt: Double = 50
-    @State private var closure: Double = 50
+    @State private var tilt: Double
+    @State private var closure: Double
     @State private var status: Status = .idle
     @State private var sendTask: Task<Void, Never>?
     @State private var dragStartClosure: Double?
+
+    init(client: OverkizClient, devices: [OverkizDevice]) {
+        self.client = client
+        self.devices = devices
+        let closures = devices.compactMap(\.currentClosure)
+        let tilts = devices.compactMap(\.currentOrientation)
+        let avgClosure = closures.isEmpty ? 50.0 : Double(closures.reduce(0, +)) / Double(closures.count)
+        let avgTilt = tilts.isEmpty ? 50.0 : Double(tilts.reduce(0, +)) / Double(tilts.count)
+        self._closure = State(initialValue: avgClosure)
+        self._tilt = State(initialValue: avgTilt)
+    }
 
     enum Status: Equatable {
         case idle, sending, ok, failed

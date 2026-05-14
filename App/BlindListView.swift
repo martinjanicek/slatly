@@ -103,10 +103,8 @@ struct BlindListView: View {
     }
 
     private var allControlsRow: some View {
-        HStack(spacing: 4) {
-            allActionButton(icon: "arrow.up", label: "Otevřít vše") { try await client.open(deviceURL: $0) }
+        HStack(spacing: 6) {
             allActionButton(icon: "stop.fill", label: "Stop vše") { try await client.stop(deviceURL: $0) }
-            allActionButton(icon: "arrow.down", label: "Zavřít vše") { try await client.close(deviceURL: $0) }
             allActionButton(icon: "star.fill", label: "My pro vše") { try await client.my(deviceURL: $0) }
         }
     }
