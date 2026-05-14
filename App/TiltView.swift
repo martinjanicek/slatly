@@ -37,7 +37,15 @@ struct TiltView: View {
             HStack(spacing: 0) {
                 ValueChip(systemImage: "arrow.up.and.down", value: Int(closure))
                 Spacer(minLength: 0)
-                statusIndicator
+                HStack(spacing: 6) {
+                    Button { Task { await sendMy() } } label: {
+                        Image(systemName: "star.fill")
+                            .font(.system(size: 12, weight: .semibold))
+                            .foregroundStyle(.tint)
+                    }
+                    .buttonStyle(.plain)
+                    statusIndicator
+                }
                 Spacer(minLength: 0)
                 ValueChip(systemImage: "rectangle.compress.vertical", value: Int(tilt))
             }
@@ -122,6 +130,17 @@ struct TiltView: View {
             } catch {
                 status = .failed
             }
+        }
+    }
+
+    private func sendMy() async {
+        sendTask?.cancel()
+        status = .sending
+        do {
+            _ = try await client.my(deviceURL: device.deviceURL)
+            status = .ok
+        } catch {
+            status = .failed
         }
     }
 }

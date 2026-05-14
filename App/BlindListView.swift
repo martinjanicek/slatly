@@ -44,15 +44,24 @@ struct BlindListView: View {
     }
 
     private var blindsList: some View {
-        List(devices.filter(\.isBlind)) { device in
-            NavigationLink(value: device) {
-                HStack(spacing: 8) {
-                    Circle()
-                        .fill(BlindThemeStore.theme(for: device.deviceURL).swatch)
-                        .overlay(Circle().stroke(.secondary.opacity(0.3), lineWidth: 0.5))
-                        .frame(width: 14, height: 14)
-                    Text(device.label ?? device.deviceURL)
-                        .lineLimit(1)
+        List {
+            Section {
+                allControlsRow
+                    .listRowBackground(Color.clear)
+                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 4, trailing: 0))
+            }
+            Section {
+                ForEach(devices.filter(\.isBlind)) { device in
+                    NavigationLink(value: device) {
+                        HStack(spacing: 8) {
+                            Circle()
+                                .fill(BlindThemeStore.theme(for: device.deviceURL).swatch)
+                                .overlay(Circle().stroke(.secondary.opacity(0.3), lineWidth: 0.5))
+                                .frame(width: 14, height: 14)
+                            Text(device.label ?? device.deviceURL)
+                                .lineLimit(1)
+                        }
+                    }
                 }
             }
         }
@@ -76,6 +85,39 @@ struct BlindListView: View {
                 .foregroundStyle(.secondary)
         }
         .padding(.horizontal, 6)
+    }
+
+    private var allControlsRow: some View {
+        HStack(spacing: 4) {
+            allActionButton(icon: "arrow.up", label: "Otevřít vše") { try await client.open(deviceURL: $0) }
+            allActionButton(icon: "stop.fill", label: "Stop vše") { try await client.stop(deviceURL: $0) }
+            allActionButton(icon: "arrow.down", label: "Zavřít vše") { try await client.close(deviceURL: $0) }
+            allActionButton(icon: "star.fill", label: "My pro vše") { try await client.my(deviceURL: $0) }
+        }
+    }
+
+    private func allActionButton(
+        icon: String,
+        label: String,
+        action: @escaping @Sendable (String) async throws -> String
+    ) -> some View {
+        Button {
+            let blinds = devices.filter(\.isBlind)
+            Task {
+                await withTaskGroup(of: Void.self) { group in
+                    for d in blinds {
+                        let url = d.deviceURL
+                        group.addTask { _ = try? await action(url) }
+                    }
+                }
+            }
+        } label: {
+            Image(systemName: icon)
+                .font(.system(size: 13, weight: .semibold))
+                .frame(maxWidth: .infinity, minHeight: 30)
+        }
+        .buttonStyle(.bordered)
+        .accessibilityLabel(label)
     }
 
     private func load() async {
