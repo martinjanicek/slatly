@@ -16,7 +16,7 @@ settings:
     CODE_SIGN_STYLE: Automatic
     DEVELOPMENT_TEAM: GB4KCN39XD
     MARKETING_VERSION: "0.1.0"
-    CURRENT_PROJECT_VERSION: "4"
+    CURRENT_PROJECT_VERSION: "5"
 targets:
   Zaluzky:
     type: application
