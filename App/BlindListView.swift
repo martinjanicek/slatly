@@ -51,6 +51,18 @@ struct BlindListView: View {
                     .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 4, trailing: 0))
             }
             Section {
+                NavigationLink(value: AllBlindsRoute()) {
+                    HStack(spacing: 8) {
+                        ZStack {
+                            Circle().fill(.tint.opacity(0.2))
+                            Image(systemName: "rectangle.3.group.fill")
+                                .font(.system(size: 9, weight: .semibold))
+                                .foregroundStyle(.tint)
+                        }
+                        .frame(width: 14, height: 14)
+                        Text("Vše").fontWeight(.semibold)
+                    }
+                }
                 ForEach(devices.filter(\.isBlind)) { device in
                     NavigationLink(value: device) {
                         HStack(spacing: 8) {
@@ -64,6 +76,9 @@ struct BlindListView: View {
                     }
                 }
             }
+        }
+        .navigationDestination(for: AllBlindsRoute.self) { _ in
+            BulkTiltView(client: client, devices: devices.filter(\.isBlind))
         }
         .navigationDestination(for: OverkizDevice.self) { device in
             TiltView(client: client, device: device)
