@@ -1,7 +1,7 @@
 {
     "meta": {
         "title": "Slatly, Apple Watch-Steuerung für Jalousien via TaHoma",
-        "description": "Steuere deine Außenjalousien direkt von der Apple Watch über deine vorhandene Somfy TaHoma-, Connexoon- oder Cozytouch-Box. Lamellen mit der Digital Crown, schließen per Wischen."
+        "description": "Somfy Außenjalousien direkt von der Apple Watch steuern. Lamellen mit der Digital Crown neigen, mit dem Finger schließen. Eigenständig, ohne iPhone."
     },
     "nav": {
         "features": "Funktionen",
@@ -44,7 +44,10 @@
         "s2_title": "iCloud-Schlüsselbund-Sync zur Uhr",
         "s2_body": "Die Zugangsdaten gelangen über den iCloud-Schlüsselbund auf die gekoppelte Apple Watch, meist binnen Sekunden. Keine weitere Kopplung nötig.",
         "s3_title": "Lass das Telefon zuhause",
-        "s3_body": "Ab jetzt spricht die Uhr direkt über LTE oder WLAN mit der Somfy-Cloud, die Befehle dann an deine TaHoma-Box zuhause weiterleitet. Freie Hände — die Jalousien gehorchen deinem Handgelenk."
+        "s3_body": "Ab jetzt spricht die Uhr direkt über LTE oder WLAN mit der Somfy-Cloud, die Befehle dann an deine TaHoma-Box zuhause weiterleitet. Freie Hände — die Jalousien gehorchen deinem Handgelenk.",
+        "s1_alt": "Illustration: Anmeldung in Slatly auf dem iPhone mit Somfy-Zugangsdaten",
+        "s2_alt": "Illustration: iCloud-Schlüsselbund synchronisiert die Zugangsdaten auf die gekoppelte Apple Watch",
+        "s3_alt": "Illustration: Apple Watch steuert Somfy-Außenjalousien eigenständig über LTE"
     },
     "faq": {
         "eyebrow": "Gut zu wissen",

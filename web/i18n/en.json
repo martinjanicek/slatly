@@ -1,7 +1,7 @@
 {
     "meta": {
         "title": "Slatly, Apple Watch controller for venetian blinds via TaHoma",
-        "description": "Control your exterior venetian blinds straight from Apple Watch through your existing Somfy TaHoma, Connexoon or Cozytouch box. Tilt with the Digital Crown, drag to close."
+        "description": "Control Somfy exterior venetian blinds from Apple Watch. Tilt the slats with the Digital Crown, drag to close. Standalone — no iPhone needed at runtime."
     },
     "nav": {
         "features": "Features",
@@ -44,7 +44,10 @@
         "s2_title": "iCloud Keychain syncs to Watch",
         "s2_body": "Credentials travel through iCloud Keychain to your paired Apple Watch, usually within seconds. No extra pairing required.",
         "s3_title": "Leave the phone behind",
-        "s3_body": "From here on, the watch talks to the Somfy cloud directly over LTE or Wi-Fi, which then relays commands to your TaHoma box at home. Free your hands; the blinds answer to your wrist."
+        "s3_body": "From here on, the watch talks to the Somfy cloud directly over LTE or Wi-Fi, which then relays commands to your TaHoma box at home. Free your hands; the blinds answer to your wrist.",
+        "s1_alt": "Illustration of signing in to Slatly on iPhone with Somfy credentials",
+        "s2_alt": "Illustration of iCloud Keychain syncing credentials to the paired Apple Watch",
+        "s3_alt": "Illustration of Apple Watch controlling Somfy exterior venetian blinds standalone over LTE"
     },
     "faq": {
         "eyebrow": "Good to know",

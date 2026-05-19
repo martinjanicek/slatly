@@ -1,7 +1,7 @@
 {
     "meta": {
         "title": "Slatly, control de persianas para Apple Watch vía TaHoma",
-        "description": "Controla tus persianas exteriores desde el Apple Watch a través de tu caja Somfy TaHoma, Connexoon o Cozytouch existente. Inclina con la Digital Crown, arrastra para cerrar."
+        "description": "Controla persianas Somfy desde el Apple Watch. Inclina las lamas con la corona, arrastra para cerrar. Autónoma, sin iPhone cerca."
     },
     "nav": {
         "features": "Funciones",
@@ -44,7 +44,10 @@
         "s2_title": "Llavero iCloud sincroniza al reloj",
         "s2_body": "Las credenciales viajan por el Llavero de iCloud hasta tu Apple Watch emparejado, normalmente en segundos. Sin emparejamiento extra.",
         "s3_title": "Deja el teléfono en casa",
-        "s3_body": "A partir de aquí el reloj habla directamente con el cloud Somfy por LTE o Wi-Fi, que reenvía los comandos a tu caja TaHoma en casa. Manos libres — las persianas obedecen a la muñeca."
+        "s3_body": "A partir de aquí el reloj habla directamente con el cloud Somfy por LTE o Wi-Fi, que reenvía los comandos a tu caja TaHoma en casa. Manos libres — las persianas obedecen a la muñeca.",
+        "s1_alt": "Ilustración: inicio de sesión en Slatly desde el iPhone con las credenciales Somfy",
+        "s2_alt": "Ilustración: el Llavero iCloud sincroniza las credenciales al Apple Watch emparejado",
+        "s3_alt": "Ilustración: el Apple Watch controla persianas Somfy exteriores en autonomía por LTE"
     },
     "faq": {
         "eyebrow": "Conviene saber",

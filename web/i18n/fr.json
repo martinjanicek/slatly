@@ -1,7 +1,7 @@
 {
     "meta": {
         "title": "Slatly, contrôleur Apple Watch pour stores via TaHoma",
-        "description": "Pilote tes stores extérieurs depuis Apple Watch via ta box Somfy TaHoma, Connexoon ou Cozytouch existante. Inclinaison avec la Digital Crown, glissement pour fermer."
+        "description": "Pilote tes stores Somfy depuis Apple Watch. Inclinaison des lames à la couronne, glisser pour fermer. Autonome, sans iPhone à proximité."
     },
     "nav": {
         "features": "Fonctions",
@@ -44,7 +44,10 @@
         "s2_title": "Trousseau iCloud vers la Watch",
         "s2_body": "Les identifiants arrivent via le Trousseau iCloud sur ton Apple Watch jumelée, généralement en quelques secondes. Aucun jumelage supplémentaire.",
         "s3_title": "Laisse le téléphone",
-        "s3_body": "À partir de là, la montre parle directement au cloud Somfy via LTE ou Wi-Fi, qui relaie ensuite les commandes à ta box TaHoma à la maison. Mains libres, les stores obéissent au poignet."
+        "s3_body": "À partir de là, la montre parle directement au cloud Somfy via LTE ou Wi-Fi, qui relaie ensuite les commandes à ta box TaHoma à la maison. Mains libres, les stores obéissent au poignet.",
+        "s1_alt": "Illustration : connexion à Slatly sur iPhone avec les identifiants Somfy",
+        "s2_alt": "Illustration : le trousseau iCloud synchronise les identifiants vers l'Apple Watch appairée",
+        "s3_alt": "Illustration : l'Apple Watch pilote les stores extérieurs Somfy en autonomie via LTE"
     },
     "faq": {
         "eyebrow": "Bon à savoir",

@@ -78,6 +78,14 @@ function applyI18n(html, dict) {
         return `<meta${next}>`;
     });
 
+    // <img … data-i18n-alt="key" …>  (rewrites alt attribute)
+    html = html.replace(/<img([^>]*\bdata-i18n-alt="([^"]+)"[^>]*)>/g, (m, attrs, key) => {
+        const v = getByPath(dict, key);
+        if (v == null) return m;
+        const next = attrs.replace(/\salt="[^"]*"/, ` alt="${htmlEscape(v)}"`);
+        return `<img${next}>`;
+    });
+
     // Any other element with data-i18n. Self-contained text content only
     // (no nested tags) — matches the site's actual usage.
     const TEXT_TAGS = ['p', 'span', 'h1', 'h2', 'h3', 'h4', 'small', 'button', 'a', 'summary', 'li'];

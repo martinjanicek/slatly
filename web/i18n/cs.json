@@ -44,7 +44,10 @@
         "s2_title": "iCloud Klíčenka sync na hodinky",
         "s2_body": "Přihlašovací údaje doputují přes iCloud Klíčenku na spárované Apple Watch, obvykle do několika vteřin. Žádné další párování.",
         "s3_title": "Nech telefon doma",
-        "s3_body": "Od teď hodinky mluví se Somfy cloudem přímo přes LTE nebo Wi-Fi, ten pak posílá příkazy do tvého TaHoma boxu doma. Volné ruce, žaluzie poslouchají zápěstí."
+        "s3_body": "Od teď hodinky mluví se Somfy cloudem přímo přes LTE nebo Wi-Fi, ten pak posílá příkazy do tvého TaHoma boxu doma. Volné ruce, žaluzie poslouchají zápěstí.",
+        "s1_alt": "Ilustrace přihlášení do Slatly na iPhonu pomocí Somfy účtu",
+        "s2_alt": "Ilustrace synchronizace přihlašovacích údajů přes iCloud Klíčenku na spárované Apple Watch",
+        "s3_alt": "Ilustrace Apple Watch ovládajících Somfy venkovní žaluzie standalone přes LTE"
     },
     "faq": {
         "eyebrow": "Dobré vědět",
