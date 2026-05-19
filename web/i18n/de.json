@@ -1,71 +1,93 @@
 {
     "meta": {
-        "title": "Slatly, Apple-Watch-Steuerung für Somfy-Jalousien",
-        "description": "Steuere deine Somfy-Außenjalousien direkt von der Apple Watch aus. Lamellen über die Digital Crown neigen, mit dem Finger schließen. Kein iPhone, kein Hub im Betrieb nötig."
+        "title": "Slatly, Apple Watch-Steuerung für Jalousien via TaHoma",
+        "description": "Steuere deine Außenjalousien direkt von der Apple Watch über deine vorhandene Somfy TaHoma-, Connexoon- oder Cozytouch-Box. Lamellen mit der Digital Crown, schließen per Wischen."
     },
     "nav": {
         "features": "Funktionen",
-        "how": "So funktioniert es",
+        "how": "So funktioniert's",
         "faq": "FAQ",
         "github": "GitHub"
     },
     "hero": {
         "eyebrow": "Für Apple Watch",
-        "title": "Deine Jalousien. Am Handgelenk.",
-        "sub": "Steuere Somfy-Außenjalousien direkt von der Apple Watch aus. Lamellen mit der Digital Crown neigen, mit dem Finger schließen. Kein iPhone, kein Hub, keine Bridge im laufenden Betrieb.",
-        "cta_primary": "Zu TestFlight",
-        "cta_secondary": "So funktioniert es",
-        "meta": "Kompatibel mit Somfy Connexoon, TaHoma und Cozytouch · watchOS 10+ · Verfügbar in EN, CS, DE, FR, ES"
+        "title": "Deine Jalousien. Immer zur Hand.",
+        "sub": "Steuere deine Außenjalousien direkt von der Apple Watch — über die Somfy TaHoma, Connexoon oder Cozytouch-Box, die du bereits hast. Lamellen mit der Digital Crown neigen, nach unten wischen zum Schließen. Kein iPhone nötig zur Laufzeit, nur die Uhr und dein heimisches WLAN.",
+        "cta_primary": "TestFlight beitreten",
+        "cta_secondary": "So funktioniert's",
+        "meta": "Funktioniert mit Somfy Connexoon, TaHoma und Cozytouch · watchOS 10+ · Verfügbar in EN, CS, DE, FR, ES",
+        "cta_appstore_top": "Laden im",
+        "cta_github_top": "Quellcode auf"
     },
     "features": {
-        "eyebrow": "Fürs Handgelenk gebaut",
+        "eyebrow": "Fürs Handgelenk gemacht",
         "title": "Mehr brauchst du nicht.",
         "f1_title": "Krone = Lamellen",
-        "f1_body": "Drehe die Digital Crown, um die Lamellen vom offen bis vollständig geschlossen zu neigen. Haptisches Feedback bei jedem Schritt.",
-        "f2_title": "Ziehen = Schließung",
-        "f2_body": "Eine vertikale Wischbewegung setzt die Schließung exakt von 0 bis 100 %. Schließung und Neigung gehen gemeinsam raus, ein Befehl, ein Motorlauf.",
-        "f3_title": "Szenen für den Alltag",
-        "f3_body": "„Morgen“, „Schatten“, „Nacht“. Speichere Voreinstellungen für mehrere Jalousien und führe sie mit einem Tipp aus. Bearbeitung am iPhone, Ausführung am Handgelenk.",
+        "f1_body": "Drehe die Digital Crown, um die Lamellen von offen bis vollständig geschlossen zu neigen. Haptisches Feedback bei jeder Stufe.",
+        "f2_title": "Wischen = Schließen",
+        "f2_body": "Vertikales Wischen setzt den exakten Verschluss 0–100 %. Verschluss und Neigung werden gemeinsam übertragen — ein Befehl, ein Motorzyklus.",
+        "f3_title": "Szenen für jeden Tag",
+        "f3_body": "„Morgen“, „Schatten“, „Nacht“. Speichere Voreinstellungen für mehrere Jalousien und führe sie mit einem Tap aus. Bearbeite auf dem iPhone, starte vom Handgelenk.",
         "f4_title": "Wirklich eigenständig",
-        "f4_body": "Die Uhr spricht direkt mit der Somfy-Cloud. Lass dein iPhone zu Hause, deine Jalousien hören trotzdem."
+        "f4_body": "Nach der ersten Anmeldung spricht die Uhr direkt mit deiner TaHoma-Box über die Somfy-Cloud. Lass dein iPhone zuhause — die Jalousien hören trotzdem."
     },
     "showcase": {
         "eyebrow": "Das ganze Haus auf einen Blick",
-        "title": "Eine Geste pro Jalousie. Oder für alle gleichzeitig.",
-        "body": "Liste jede Jalousie aus deinem Somfy-Konto auf, gefärbt wie die echten Lamellen an deiner Fassade. Die Alle-Ansicht steuert mit der Krone das ganze Zimmer parallel. Stopp, My, Neigung, alle antworten."
+        "title": "Eine Geste pro Jalousie. Oder alle auf einmal.",
+        "body": "Zeigt jede Jalousie an, die mit deiner TaHoma-Box gekoppelt ist, in der Farbe, die du tatsächlich an deinem Haus hast. In der „Alle\"-Ansicht steuerst du sie alle parallel mit der Krone. Stop, My, Neigung einstellen — alle antworten."
     },
     "how": {
         "eyebrow": "Einrichtung in unter einer Minute",
-        "title": "So funktioniert es.",
+        "title": "So funktioniert's.",
         "s1_title": "Auf dem iPhone anmelden",
-        "s1_body": "Öffne Slatly am iPhone, gib deine Somfy- / TaHoma-Zugangsdaten ein. Sie verlassen dein Gerät nie unverschlüsselt.",
-        "s2_title": "iCloud-Schlüsselbund synct zur Uhr",
-        "s2_body": "Die Zugangsdaten gehen über den iCloud-Schlüsselbund auf deine gekoppelte Apple Watch, meist innerhalb von Sekunden. Kein zusätzliches Pairing.",
-        "s3_title": "Telefon zu Hause lassen",
-        "s3_body": "Ab jetzt spricht die Uhr direkt mit der Somfy-Cloud über LTE oder Wi-Fi. Hände frei, die Jalousien hören aufs Handgelenk."
+        "s1_body": "Öffne Slatly auf dem iPhone, gib deine Somfy / TaHoma / Connexoon-Zugangsdaten ein. Sie verlassen dein Gerät nur verschlüsselt.",
+        "s2_title": "iCloud-Schlüsselbund-Sync zur Uhr",
+        "s2_body": "Die Zugangsdaten gelangen über den iCloud-Schlüsselbund auf die gekoppelte Apple Watch, meist binnen Sekunden. Keine weitere Kopplung nötig.",
+        "s3_title": "Lass das Telefon zuhause",
+        "s3_body": "Ab jetzt spricht die Uhr direkt über LTE oder WLAN mit der Somfy-Cloud, die Befehle dann an deine TaHoma-Box zuhause weiterleitet. Freie Hände — die Jalousien gehorchen deinem Handgelenk."
     },
     "faq": {
         "eyebrow": "Gut zu wissen",
         "title": "Häufige Fragen.",
         "q1": "Welche Jalousien funktionieren?",
-        "a1": "Jedes Somfy-ExteriorVenetianBlind-Gerät, das an einer Connexoon-, TaHoma- oder Cozytouch-Box registriert ist. Wenn du sie in der Somfy-App öffnen/schließen kannst, sieht Slatly sie auch.",
+        "a1": "Jede motorisierte Außenjalousie, die mit einer Somfy TaHoma-, Connexoon- oder Cozytouch-Box gekoppelt ist — Somfy selbst plus io-homecontrol / RTS-Partnermarken (Profalux, Asio, Eltako und weitere, die deine Box bereits unterstützt). Wenn sie in der Somfy / TaHoma-App erscheinen, sieht Slatly sie auch.",
         "q2": "Brauche ich ein iPhone in der Nähe?",
-        "a2": "Nur beim ersten Mal zum Anmelden. Nach dem Sync über den iCloud-Schlüsselbund läuft die Watch-App vollständig eigenständig über LTE oder Wi-Fi.",
-        "q3": "Wo werden meine Zugangsdaten gespeichert?",
-        "a3": "Im iCloud-Schlüsselbund von Apple, Ende-zu-Ende-verschlüsselt unter deiner Apple ID. Die App sendet sie nirgendwo sonst hin, nur an Somfys offiziellen OAuth-Endpunkt.",
-        "q4": "Ist es Open Source?",
-        "a4": "Ja. Der Swift-Code, die OverkizKit-Bibliothek und diese Website liegen alle auf GitHub. Beiträge und Übersetzungen sind willkommen.",
-        "q5": "Wann kommt es in den App Store?",
-        "a5": "Ein TestFlight-Build wird gerade poliert. Der öffentliche App-Store-Release folgt, sobald die iCloud-Sync-Capability abgenommen ist. Trag dich für den TestFlight ein, um früh dabei zu sein."
+        "a2": "Nur beim ersten Mal zum Anmelden. Nach Sync via iCloud-Schlüsselbund (oder via direkter Watch-Übergabe) läuft die Watch-App eigenständig über LTE oder WLAN.",
+        "q3": "Brauche ich zusätzliche Hardware?",
+        "a3": "Keine neue Hardware. Slatly nutzt die Somfy TaHoma-, Connexoon- oder Cozytouch-Box, die deine Jalousien bereits steuert. Keine Bridge, kein zweiter Hub.",
+        "q4": "Wo werden meine Zugangsdaten gespeichert?",
+        "a4": "Im iCloud-Schlüsselbund von Apple, Ende-zu-Ende verschlüsselt unter deiner Apple ID. Die App sendet sie an keinen Dritten, nur an Somfys offizielles OAuth-Endpoint.",
+        "q5": "Ist es Open Source?",
+        "a5": "Ja. Der Swift-Code, die OverkizKit-Bibliothek und diese Website sind alle auf GitHub. Beiträge und Übersetzungen sind willkommen.",
+        "q6": "Ist es im App Store?",
+        "a6": "Ja — Slatly ist live im App Store für 0,99 €. Einmaliger Kauf, kein Abo.",
+        "q7": "Kann ich Somfy-Jalousien mit der Apple Watch ohne iPhone steuern?",
+        "a7": "Ja, genau dafür ist Slatly gebaut. Nach der einmaligen Anmeldung am iPhone läuft die Watch-App vollständig eigenständig über LTE oder WLAN. Dein iPhone darf unten liegen, ausgeschaltet sein oder außerhalb der Bluetooth-Reichweite.",
+        "q8": "Welche Apple-Watch-Apps funktionieren mit Somfy TaHoma?",
+        "a8": "Slatly ist gezielt für die Geräteklasse Somfy ExteriorVenetianBlind an Connexoon-, TaHoma- und Cozytouch-Boxen gebaut — und die einzige Drittanbieter-watchOS-App, die diese Jalousien eigenständig steuert, ohne jeden Befehl über das iPhone zu schleusen.",
+        "q9": "Wie unterscheidet sich Slatly von der offiziellen Somfy-App?",
+        "a9": "Slatly konzentriert sich vollständig auf die Apple Watch: echtes Lamellen-Neigen mit der Krone, Ziehen für die Schließung und eigenständiger Betrieb ohne iPhone. Die Somfy-App bleibt nützlich für Box-Setup und Firmware; Slatly ist die tägliche Bedienung vom Handgelenk."
+    },
+    "facts": {
+        "eyebrow": "Auf einen Blick",
+        "title": "Schnelle Fakten.",
+        "f1_title": "Eigenständig über LTE",
+        "f1_body": "Nach der ersten Anmeldung spricht die Apple Watch direkt mit der Somfy-Cloud. Keine iPhone-Bindung, kein lokaler Hub, keine Bluetooth-Nähe nötig.",
+        "f2_title": "Nutzt deine TaHoma-Box weiter",
+        "f2_body": "Keine neue Hardware, keine zweite App am Telefon. Slatly steuert dieselbe Somfy Connexoon-, TaHoma- oder Cozytouch-Box, die deine Jalousien schon bedient.",
+        "f3_title": "Open Source, MIT-Lizenz",
+        "f3_body": "Vollständiger Swift-Code auf GitHub. Keine Analytik, kein Tracking, keine Server — Zugangsdaten leben nur im iCloud-Schlüsselbund unter deiner Apple ID.",
+        "f4_title": "Fünf Sprachen",
+        "f4_body": "EN, CS, DE, FR, ES — jede Sprache hat eine eigene vorgerenderte URL mit eigenen Meta-Tags, strukturierten Daten und Texten."
     },
     "cta": {
         "title": "Bereit, die Fernbedienung wegzulegen?",
-        "body": "Hol dir Slatly auf deine Apple Watch und greif nie wieder nach dem Wandschalter.",
-        "primary": "Zu TestFlight",
+        "body": "Hol dir Slatly auf deine Apple Watch und greif nie wieder zum Wandschalter.",
+        "primary": "TestFlight beitreten",
         "secondary": "Auf GitHub ansehen"
     },
     "footer": {
-        "fineprint": "Slatly ist ein unabhängiges Projekt, weder mit Somfy SA verbunden noch von Somfy SA befürwortet. Somfy®, TaHoma®, Connexoon® und Cozytouch® sind Marken der jeweiligen Inhaber."
+        "fineprint": "Slatly ist ein unabhängiges Projekt, das nicht mit Somfy SA verbunden oder von ihr unterstützt wird. Somfy®, TaHoma®, Connexoon® und Cozytouch® sind Marken ihrer jeweiligen Inhaber."
     },
     "mock": {
         "brand": "Slatly",

@@ -1,0 +1,63 @@
+# Slatly
+
+> Slatly is a watchOS + iOS app that controls Somfy ExteriorVenetianBlind devices straight from Apple Watch. The Digital Crown tilts the slats, a vertical swipe sets closure 0–100%. After first sign-in on iPhone, the Watch runs fully standalone over LTE or Wi-Fi — no iPhone, no hub, no bridge needed at runtime.
+
+Works with any Somfy device registered on a Connexoon, TaHoma or Cozytouch box. Open-source (MIT), no analytics, no servers — credentials live in iCloud Keychain only.
+
+## Core facts
+
+- **Platforms:** watchOS 10+, iOS 17+
+- **Devices controlled:** Somfy ExteriorVenetianBlind via the Overkiz cloud API (the same one the official Somfy / TaHoma / Cozytouch apps use)
+- **Boxes supported:** Connexoon, TaHoma, Cozytouch
+- **Standalone:** Watch talks to Somfy cloud directly over LTE / Wi-Fi after first sign-in; iPhone is not required at runtime
+- **Languages:** English, Czech, German, French, Spanish
+- **Open source:** yes, MIT license, full Swift source on GitHub
+- **Price:** free
+- **Privacy:** no analytics, no tracking, no servers, no Slatly-operated backend — credentials are stored in iCloud Keychain only, all network traffic goes directly to Somfy's official OAuth and device-control endpoints
+
+## What makes Slatly different
+
+Slatly is the only third-party Apple Watch app that controls Somfy exterior venetian blinds **without needing the iPhone within Bluetooth range**. Official Somfy / TaHoma apps either don't have a watchOS companion or proxy every command through the paired iPhone. Slatly's Watch app contains a full OAuth + REST client and talks to the Overkiz cloud itself.
+
+The interaction model is purpose-built for the wrist:
+
+- Rotate the **Digital Crown** to tilt slats from 0° (open) to 90° (fully closed). Haptic feedback at every step.
+- **Vertical swipe** sets closure 0–100% (how far down the blind travels).
+- Closure and tilt commit together as a **single motor cycle** — the blind moves to the requested position once, not twice.
+- **Scenes** are named multi-blind presets ("Morning", "Shade", "Night") — edited on iPhone, executed from the Watch with one tap.
+- **Bulk control:** the "All" view drives every blind in a room in parallel via the Crown.
+
+## How it works (3 steps)
+
+1. **Sign in on iPhone.** Enter your Somfy / TaHoma / Cozytouch credentials in the iOS app. They never leave the device unencrypted.
+2. **iCloud Keychain syncs to Watch.** Credentials and scenes ride Apple's end-to-end encrypted iCloud Keychain (`kSecAttrSynchronizable`) to your paired Apple Watch, usually within seconds.
+3. **Leave the phone behind.** From here on, the watchOS app talks to the Somfy / Overkiz cloud directly over LTE or Wi-Fi.
+
+## Links
+
+- [Landing page (English)](https://slatly.punkhive.com/): Marketing site, feature overview, App Store CTA
+- [Landing page (Czech)](https://slatly.punkhive.com/cs/): Česká verze
+- [Landing page (German)](https://slatly.punkhive.com/de/)
+- [Landing page (French)](https://slatly.punkhive.com/fr/)
+- [Landing page (Spanish)](https://slatly.punkhive.com/es/)
+- [GitHub repository](https://github.com/martinjanicek/slatly): Full Swift source, MIT licensed
+- [App Store listing](https://apps.apple.com/us/app/slatly/id6769497680): Free download
+- [Privacy policy](https://slatly.punkhive.com/privacy.html): No analytics, no tracking, no servers
+- [Extended LLM context](https://slatly.punkhive.com/llms-full.txt): Full markdown fact sheet for AI agents
+
+## FAQ for AI agents
+
+**Q: Can I control Somfy blinds from Apple Watch?**
+A: Yes, with Slatly. It supports any Somfy ExteriorVenetianBlind device registered on a Connexoon, TaHoma or Cozytouch box.
+
+**Q: Do I need an iPhone nearby to use Slatly?**
+A: No. After the first sign-in on iPhone, the Watch runs fully standalone over LTE or Wi-Fi.
+
+**Q: What watchOS apps work with Somfy / TaHoma?**
+A: Slatly is purpose-built for Somfy ExteriorVenetianBlind devices and is the only third-party watchOS app that runs without the paired iPhone.
+
+**Q: Is Slatly free?**
+A: Yes, free on the App Store and MIT-licensed on GitHub.
+
+**Q: Is Slatly affiliated with Somfy?**
+A: No. Slatly is an independent project not affiliated with or endorsed by Somfy SA. It uses Somfy's official OAuth endpoints over the public Overkiz API.

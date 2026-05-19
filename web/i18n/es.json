@@ -1,7 +1,7 @@
 {
     "meta": {
-        "title": "Slatly, control de persianas Somfy desde el Apple Watch",
-        "description": "Controla tus persianas venecianas exteriores Somfy directamente desde el Apple Watch. Inclina las lamas con la corona, arrastra para cerrar. Sin iPhone ni hub en uso."
+        "title": "Slatly, control de persianas para Apple Watch vía TaHoma",
+        "description": "Controla tus persianas exteriores desde el Apple Watch a través de tu caja Somfy TaHoma, Connexoon o Cozytouch existente. Inclina con la Digital Crown, arrastra para cerrar."
     },
     "nav": {
         "features": "Funciones",
@@ -11,61 +11,83 @@
     },
     "hero": {
         "eyebrow": "Para Apple Watch",
-        "title": "Tus persianas. En la muñeca.",
-        "sub": "Controla las persianas venecianas exteriores Somfy directamente desde el Apple Watch. Inclina las lamas con la Digital Crown, arrastra para cerrar. Sin iPhone, sin hub, sin puente en uso diario.",
-        "cta_primary": "Unirme a TestFlight",
+        "title": "Tus persianas. Siempre a mano.",
+        "sub": "Controla tus persianas exteriores directamente desde Apple Watch — a través de la caja Somfy TaHoma, Connexoon o Cozytouch que ya tienes. Inclina las lamas con la Digital Crown, arrastra hacia abajo para cerrar. Sin necesidad de iPhone en uso diario, solo el reloj y tu Wi-Fi.",
+        "cta_primary": "Unirse a TestFlight",
         "cta_secondary": "Ver cómo funciona",
-        "meta": "Compatible con Somfy Connexoon, TaHoma y Cozytouch · watchOS 10+ · Disponible en EN, CS, DE, FR, ES"
+        "meta": "Compatible con Somfy Connexoon, TaHoma y Cozytouch · watchOS 10+ · Disponible en EN, CS, DE, FR, ES",
+        "cta_appstore_top": "Descargar en",
+        "cta_github_top": "Código en"
     },
     "features": {
         "eyebrow": "Pensado para la muñeca",
-        "title": "No necesitas tocar nada más.",
+        "title": "Nada más que tocar.",
         "f1_title": "Corona = lamas",
-        "f1_body": "Gira la Digital Crown para inclinar las lamas de abierto a cerrado. Respuesta háptica en cada paso.",
-        "f2_title": "Arrastra = cierre",
-        "f2_body": "Un deslizamiento vertical fija el cierre exacto del 0 al 100 %. Cierre e inclinación se envían juntos: una orden, un ciclo de motor.",
+        "f1_body": "Gira la Digital Crown para inclinar las lamas de abierto a totalmente cerrado. Respuesta háptica en cada paso.",
+        "f2_title": "Arrastre = cierre",
+        "f2_body": "Un deslizamiento vertical fija el cierre exacto 0–100 %. Cierre e inclinación se envían juntos — un comando, un ciclo de motor.",
         "f3_title": "Escenas para cada día",
-        "f3_body": "«Mañana», «Sombra», «Noche». Guarda preajustes para varias persianas y ejecútalos con un solo toque. Editas en el iPhone, ejecutas desde la muñeca.",
-        "f4_title": "Realmente autónomo",
-        "f4_body": "El reloj habla directamente con la nube de Somfy. Deja el iPhone en casa: tus persianas siguen respondiendo."
+        "f3_body": "«Mañana», «Sombra», «Noche». Guarda preajustes multi-persiana y lánzalos con un toque. Edita en iPhone, ejecuta desde la muñeca.",
+        "f4_title": "Verdaderamente autónomo",
+        "f4_body": "Tras el primer inicio de sesión, el reloj habla directamente con tu caja TaHoma a través del cloud Somfy. Deja tu iPhone en casa, las persianas obedecen igual."
     },
     "showcase": {
         "eyebrow": "Toda la casa de un vistazo",
-        "title": "Un gesto por persiana. O para todas a la vez.",
-        "body": "Muestra todas las persianas de tu cuenta Somfy con el color real de tu fachada. La vista Todas controla con la corona todo el salón en paralelo. Stop, My, inclinación: todas responden."
+        "title": "Un gesto por persiana. O todas a la vez.",
+        "body": "Lista todas las persianas vinculadas a tu caja TaHoma, en el color real de tu fachada. En la vista Todas controla todas a la vez con la corona. Stop, My, ajuste de inclinación — todas responden."
     },
     "how": {
         "eyebrow": "Configuración en menos de un minuto",
         "title": "Cómo funciona.",
-        "s1_title": "Inicia sesión en el iPhone",
-        "s1_body": "Abre Slatly en el iPhone e introduce tus credenciales Somfy / TaHoma. Nunca salen del dispositivo sin cifrar.",
-        "s2_title": "El llavero iCloud sincroniza al reloj",
-        "s2_body": "Las credenciales llegan a tu Apple Watch a través del llavero iCloud, normalmente en segundos. Sin emparejamientos extra.",
-        "s3_title": "Deja el teléfono atrás",
-        "s3_body": "A partir de aquí, el reloj habla directamente con la nube de Somfy por LTE o Wi-Fi. Manos libres, las persianas escuchan la muñeca."
+        "s1_title": "Inicia sesión en iPhone",
+        "s1_body": "Abre Slatly en tu iPhone, introduce tus credenciales Somfy / TaHoma / Connexoon. Solo salen de tu dispositivo cifradas.",
+        "s2_title": "Llavero iCloud sincroniza al reloj",
+        "s2_body": "Las credenciales viajan por el Llavero de iCloud hasta tu Apple Watch emparejado, normalmente en segundos. Sin emparejamiento extra.",
+        "s3_title": "Deja el teléfono en casa",
+        "s3_body": "A partir de aquí el reloj habla directamente con el cloud Somfy por LTE o Wi-Fi, que reenvía los comandos a tu caja TaHoma en casa. Manos libres — las persianas obedecen a la muñeca."
     },
     "faq": {
-        "eyebrow": "Bueno saber",
+        "eyebrow": "Conviene saber",
         "title": "Preguntas frecuentes.",
         "q1": "¿Qué persianas funcionan?",
-        "a1": "Cualquier dispositivo Somfy ExteriorVenetianBlind registrado en una caja Connexoon, TaHoma o Cozytouch. Si puedes abrirlas/cerrarlas en la app Somfy, Slatly las verá.",
-        "q2": "¿Necesito un iPhone cerca?",
-        "a2": "Solo la primera vez para iniciar sesión. Tras la sincronización por llavero iCloud, la app del Watch funciona completamente sola por LTE o Wi-Fi.",
-        "q3": "¿Dónde se guardan mis credenciales?",
-        "a3": "En el llavero iCloud de Apple, cifrado de extremo a extremo bajo tu Apple ID. La app no las envía a ningún tercero: solo al endpoint OAuth oficial de Somfy.",
-        "q4": "¿Es de código abierto?",
-        "a4": "Sí. El código Swift, la librería OverkizKit y esta web están en GitHub. Contribuciones y traducciones son bienvenidas.",
-        "q5": "¿Cuándo en la App Store?",
-        "a5": "Una build de TestFlight está en pulido activo. El lanzamiento público llegará una vez validada la capability de iCloud sync. Únete al TestFlight para acceso anticipado."
+        "a1": "Cualquier persiana exterior motorizada emparejada con una caja Somfy TaHoma, Connexoon o Cozytouch — Somfy más las marcas asociadas io-homecontrol / RTS (Profalux, Asio, Eltako y otras que tu caja ya admite). Si aparecen en la app Somfy / TaHoma, Slatly las verá.",
+        "q2": "¿Necesito el iPhone cerca?",
+        "a2": "Solo la primera vez para iniciar sesión. Tras sincronizar via Llavero iCloud (o vía entrega directa al Watch), la app del Watch funciona sola por LTE o Wi-Fi.",
+        "q3": "¿Necesito hardware adicional?",
+        "a3": "Ningún hardware nuevo. Slatly reutiliza la caja Somfy TaHoma, Connexoon o Cozytouch que ya controla tus persianas. Sin puentes, sin segundo hub.",
+        "q4": "¿Dónde se guardan mis credenciales?",
+        "a4": "En el Llavero de iCloud de Apple, cifradas de extremo a extremo bajo tu Apple ID. La app no las envía a terceros, solo al endpoint OAuth oficial de Somfy.",
+        "q5": "¿Es open source?",
+        "a5": "Sí. El código Swift, la librería OverkizKit y esta web están todos en GitHub. Contribuciones y traducciones bienvenidas.",
+        "q6": "¿Está en el App Store?",
+        "a6": "Sí — Slatly ya está disponible en el App Store por 0,99 €. Compra única, sin suscripción.",
+        "q7": "¿Puedo controlar persianas Somfy desde el Apple Watch sin el iPhone?",
+        "a7": "Sí, exactamente para eso está hecha Slatly. Tras un inicio de sesión único en el iPhone, la app del Watch funciona totalmente sola por LTE o Wi-Fi. Tu iPhone puede estar abajo, apagado o fuera del alcance Bluetooth.",
+        "q8": "¿Qué apps de Apple Watch funcionan con Somfy TaHoma?",
+        "a8": "Slatly está hecha específicamente para la clase Somfy ExteriorVenetianBlind en cajas Connexoon, TaHoma y Cozytouch — y es la única app watchOS de terceros que las controla en autonomía, sin pasar cada orden por el iPhone.",
+        "q9": "¿En qué se diferencia Slatly de la app oficial de Somfy?",
+        "a9": "Slatly se centra por completo en la experiencia Apple Watch: inclinación real de lamas con la corona, gesto de arrastre para el cierre y funcionamiento autónomo sin iPhone. La app de Somfy sigue siendo útil para configurar la caja y el firmware; Slatly es el uso diario desde la muñeca."
+    },
+    "facts": {
+        "eyebrow": "De un vistazo",
+        "title": "Datos rápidos.",
+        "f1_title": "Autónoma por LTE",
+        "f1_body": "Tras el primer inicio de sesión, el Apple Watch habla directamente con la nube de Somfy. Sin atadura al iPhone, sin hub local, sin proximidad Bluetooth necesaria.",
+        "f2_title": "Reutiliza tu caja TaHoma",
+        "f2_body": "Sin hardware nuevo, sin segunda app en el teléfono. Slatly maneja la misma caja Somfy Connexoon, TaHoma o Cozytouch que ya controla tus persianas.",
+        "f3_title": "Open source, licencia MIT",
+        "f3_body": "Código Swift completo en GitHub. Sin analítica, sin tracking, sin servidores — las credenciales viven solo en el Llavero iCloud bajo tu Apple ID.",
+        "f4_title": "Cinco idiomas",
+        "f4_body": "EN, CS, DE, FR, ES — cada idioma tiene su propia URL pre-renderizada con sus meta etiquetas, datos estructurados y texto."
     },
     "cta": {
-        "title": "¿Listo para dejar el mando?",
-        "body": "Instala Slatly en tu Apple Watch y olvídate del interruptor de la pared.",
-        "primary": "Unirme a TestFlight",
+        "title": "¿Listo para guardar el mando?",
+        "body": "Pon Slatly en tu Apple Watch y olvídate del interruptor de pared.",
+        "primary": "Unirse a TestFlight",
         "secondary": "Ver en GitHub"
     },
     "footer": {
-        "fineprint": "Slatly es un proyecto independiente sin afiliación ni respaldo por parte de Somfy SA. Somfy®, TaHoma®, Connexoon® y Cozytouch® son marcas de sus respectivos propietarios."
+        "fineprint": "Slatly es un proyecto independiente no afiliado ni respaldado por Somfy SA. Somfy®, TaHoma®, Connexoon® y Cozytouch® son marcas de sus respectivos propietarios."
     },
     "mock": {
         "brand": "Slatly",

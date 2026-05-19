@@ -1,7 +1,91 @@
+# Slatly — robots.txt
+# Sitemap and LLM fact sheets:
+Sitemap: https://slatly.punkhive.com/sitemap.xml
+
+# All search engines (default) — full access
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://slatly.punkhive.com/sitemap.xml
+# Explicit allow for AI / LLM crawlers that respect robots.txt.
+# We want Slatly to be discoverable in AI search results (ChatGPT search,
+# Perplexity, Google AI Overviews, Bing Copilot, Claude, You.com, Brave Leo,
+# etc.) and citable in LLM training corpora.
 
-# Be nice to crawlers — nothing to hide, everything to index.
+# OpenAI — used by ChatGPT browsing and the OpenAI training crawler
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic — Claude's web crawlers and live-fetch agent
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity — both their training crawler and live-fetch user agent
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Google — AI Overviews / Gemini training (separate from regular Googlebot)
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+# Microsoft Copilot / Bing AI
+User-agent: Bingbot
+Allow: /
+
+# Common Crawl — feeds many LLM training datasets
+User-agent: CCBot
+Allow: /
+
+# Apple Intelligence / Spotlight web indexing
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# You.com
+User-agent: YouBot
+Allow: /
+
+# Meta (Llama) training crawler
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+# Mistral
+User-agent: MistralAI-User
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+
+# DuckDuckGo
+User-agent: DuckAssistBot
+Allow: /
+
+# AI fact sheets explicitly advertised:
+#   https://slatly.punkhive.com/llms.txt      (compact index)
+#   https://slatly.punkhive.com/llms-full.txt (full markdown context)

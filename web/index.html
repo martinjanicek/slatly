@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title data-i18n="meta.title">Slatly, Apple Watch controller for Somfy blinds</title>
-    <meta name="description" data-i18n="meta.description" content="Control your Somfy exterior venetian blinds straight from Apple Watch. Tilt with the Digital Crown, drag to close. No iPhone, no hub required at runtime.">
+    <title data-i18n="meta.title">Slatly, Apple Watch controller for venetian blinds via TaHoma</title>
+    <meta name="description" data-i18n="meta.description" content="Control your exterior venetian blinds straight from Apple Watch through your existing Somfy TaHoma, Connexoon or Cozytouch box. Tilt with the Digital Crown, drag to close.">
 
     <meta name="author" content="Martin Janíček">
     <meta name="keywords" content="Slatly, Somfy Apple Watch, Somfy watchOS, ExteriorVenetianBlind, TaHoma Apple Watch, Connexoon Apple Watch, Cozytouch Apple Watch, venetian blinds controller, smart home Apple Watch, Digital Crown blinds, standalone watchOS app">
@@ -30,8 +30,8 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Slatly">
-    <meta property="og:title" content="Slatly, Apple Watch controller for Somfy blinds" data-i18n="meta.title">
-    <meta property="og:description" content="Control your Somfy exterior venetian blinds straight from Apple Watch. Tilt with the Digital Crown, drag to close. No iPhone, no hub required at runtime." data-i18n="meta.description">
+    <meta property="og:title" content="Slatly, Apple Watch controller for venetian blinds via TaHoma" data-i18n="meta.title">
+    <meta property="og:description" content="Control your exterior venetian blinds straight from Apple Watch through your existing Somfy TaHoma, Connexoon or Cozytouch box. Tilt with the Digital Crown, drag to close." data-i18n="meta.description">
     <meta property="og:url" content="https://slatly.punkhive.com/">
     <meta property="og:locale" content="en_US">
     <meta property="og:locale:alternate" content="cs_CZ">
@@ -46,8 +46,8 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Slatly, Apple Watch controller for Somfy blinds" data-i18n="meta.title">
-    <meta name="twitter:description" content="Control your Somfy exterior venetian blinds straight from Apple Watch. Tilt with the Digital Crown, drag to close. No iPhone, no hub required at runtime." data-i18n="meta.description">
+    <meta name="twitter:title" content="Slatly, Apple Watch controller for venetian blinds via TaHoma" data-i18n="meta.title">
+    <meta name="twitter:description" content="Control your exterior venetian blinds straight from Apple Watch through your existing Somfy TaHoma, Connexoon or Cozytouch box. Tilt with the Digital Crown, drag to close." data-i18n="meta.description">
     <meta name="twitter:image" content="https://slatly.punkhive.com/assets/og-image.png">
     <meta name="twitter:image:alt" content="Slatly — Apple Watch tilting Somfy exterior venetian blinds with the Digital Crown">
 
@@ -72,7 +72,7 @@
       "url": "https://slatly.punkhive.com/",
       "downloadUrl": "https://apps.apple.com/us/app/slatly/id6769497680",
       "installUrl": "https://apps.apple.com/us/app/slatly/id6769497680",
-      "description": "Control your Somfy exterior venetian blinds straight from Apple Watch. Tilt with the Digital Crown, drag to close. No iPhone, no hub required at runtime.",
+      "description": "Control your exterior venetian blinds straight from Apple Watch through your existing Somfy TaHoma, Connexoon or Cozytouch box. Tilt with the Digital Crown, drag to close.",
       "image": "https://slatly.punkhive.com/assets/app-icon-512.png",
       "screenshot": [
         "https://slatly.punkhive.com/assets/watch-list.png",
@@ -103,7 +103,7 @@
         "Rotate the Digital Crown to tilt slats from open to fully closed. Haptic feedback at every stop.",
         "A vertical swipe sets exact closure 0–100%. Closure and tilt commit together, one command, one motor cycle.",
         "\"Morning\", \"Shade\", \"Night\". Save multi-blind presets and run them with a single tap. Edit on iPhone, run from the wrist.",
-        "The watch talks to Somfy cloud directly. Leave your iPhone behind, your blinds still listen."
+        "After the first sign-in, the watch talks to your TaHoma box through the Somfy cloud directly. Your iPhone stays home; the blinds still answer."
       ]
     },
     {
@@ -120,8 +120,8 @@
       "@type": "WebPage",
       "@id": "https://slatly.punkhive.com/#webpage",
       "url": "https://slatly.punkhive.com/",
-      "name": "Slatly, Apple Watch controller for Somfy blinds",
-      "description": "Control your Somfy exterior venetian blinds straight from Apple Watch. Tilt with the Digital Crown, drag to close. No iPhone, no hub required at runtime.",
+      "name": "Slatly, Apple Watch controller for venetian blinds via TaHoma",
+      "description": "Control your exterior venetian blinds straight from Apple Watch through your existing Somfy TaHoma, Connexoon or Cozytouch box. Tilt with the Digital Crown, drag to close.",
       "inLanguage": "en",
       "isPartOf": {
         "@id": "https://slatly.punkhive.com/#website"
@@ -144,7 +144,7 @@
           "name": "Which blinds work?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Any Somfy ExteriorVenetianBlind device registered on a Connexoon, TaHoma or Cozytouch box. If you can open/close them in the Somfy app, Slatly will see them."
+            "text": "Any motorised exterior venetian blind paired with a Somfy TaHoma, Connexoon or Cozytouch box — Somfy itself, plus io-homecontrol / RTS partner brands (Profalux, Asio, Eltako and others your box already supports). If they show up in the Somfy / TaHoma app, Slatly will see them."
           }
         },
         {
@@ -152,7 +152,15 @@
           "name": "Do I need an iPhone nearby?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Only the first time, to sign in. After credentials sync via iCloud Keychain, the Watch app runs fully standalone over LTE or Wi-Fi."
+            "text": "Only the first time, to sign in. After credentials sync via iCloud Keychain (or via the built-in Watch hand-off), the Watch app runs fully standalone over LTE or Wi-Fi."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need extra hardware?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No new hardware. Slatly reuses the Somfy TaHoma, Connexoon or Cozytouch box that already controls your blinds. No bridge, no second hub."
           }
         },
         {
@@ -173,10 +181,34 @@
         },
         {
           "@type": "Question",
-          "name": "When is it on the App Store?",
+          "name": "Is it on the App Store?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A TestFlight build is in active polish. Public App Store release follows once the iCloud sync capability work is signed off. Join the TestFlight to get early access."
+            "text": "Yes — Slatly is live on the App Store for $0.99 / a few crowns. One-time purchase, no subscription."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I control Somfy blinds from Apple Watch without the iPhone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, that's exactly what Slatly is built for. After a one-time iPhone sign-in, the Watch app runs fully standalone over LTE or Wi-Fi. Your iPhone can be downstairs, off, or out of Bluetooth range."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What Apple Watch apps work with Somfy TaHoma?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Slatly is purpose-built for the Somfy ExteriorVenetianBlind class on Connexoon, TaHoma and Cozytouch boxes — and it's the only third-party watchOS app that drives them standalone, without proxying every command through the iPhone."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is Slatly different from the official Somfy app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Slatly focuses entirely on the Apple Watch experience: real Crown-driven slat tilt, drag-to-closure gestures and standalone operation without the iPhone. The Somfy app remains useful for box setup and firmware updates; Slatly is the daily driver from your wrist."
           }
         }
       ]
@@ -193,7 +225,7 @@
           "@type": "HowToStep",
           "position": 1,
           "name": "Sign in on iPhone",
-          "text": "Open Slatly on your iPhone, enter your Somfy / TaHoma credentials. They never leave your device unencrypted.",
+          "text": "Open Slatly on your iPhone, enter your Somfy / TaHoma / Connexoon account. They never leave your device unencrypted.",
           "url": "https://slatly.punkhive.com/#how"
         },
         {
@@ -207,7 +239,7 @@
           "@type": "HowToStep",
           "position": 3,
           "name": "Leave the phone behind",
-          "text": "From here on, the watch talks to Somfy cloud directly over LTE or Wi-Fi. Free your hands; the blinds answer to your wrist.",
+          "text": "From here on, the watch talks to the Somfy cloud directly over LTE or Wi-Fi, which then relays commands to your TaHoma box at home. Free your hands; the blinds answer to your wrist.",
           "url": "https://slatly.punkhive.com/#how"
         }
       ]
@@ -253,8 +285,8 @@
             <div class="hero-inner">
                 <div class="hero-text">
                     <p class="eyebrow" data-i18n="hero.eyebrow">For Apple Watch</p>
-                    <h1 data-i18n="hero.title">Your blinds, on your wrist.</h1>
-                    <p class="hero-sub" data-i18n="hero.sub">Control Somfy exterior venetian blinds straight from Apple Watch. Tilt the slats with the Digital Crown, drag down to close. No iPhone, no hub, no bridge needed at runtime.</p>
+                    <h1 data-i18n="hero.title">Your blinds. Always at hand.</h1>
+                    <p class="hero-sub" data-i18n="hero.sub">Control your exterior venetian blinds straight from Apple Watch — using the Somfy TaHoma, Connexoon or Cozytouch box you already own. Tilt the slats with the Digital Crown, drag down to close. No iPhone needed at runtime, just the watch and your home Wi-Fi.</p>
                     <div class="hero-ctas">
                         <a class="appstore-badge" href="https://apps.apple.com/us/app/slatly/id6769497680" aria-label="Download Slatly on the App Store">
                             <svg viewBox="0 0 24 24" aria-hidden="true" class="appstore-apple"><path fill="currentColor" d="M19.665 16.811c-.317.741-.694 1.424-1.13 2.051-.594.853-1.081 1.444-1.456 1.772-.583.537-1.207.812-1.876.831-.479 0-1.06-.137-1.738-.415-.681-.276-1.306-.413-1.879-.413-.6 0-1.244.137-1.932.413-.69.278-1.246.421-1.673.435-.642.027-1.281-.255-1.916-.85-.407-.357-.916-.97-1.523-1.838-.65-.926-1.184-2-1.6-3.226-.445-1.323-.668-2.605-.668-3.846 0-1.423.307-2.65.92-3.679.484-.829 1.127-1.483 1.93-1.962.804-.479 1.673-.723 2.608-.738.51 0 1.18.158 2.012.471.83.314 1.362.473 1.594.473.174 0 .766-.187 1.772-.557.952-.343 1.755-.485 2.41-.43 1.778.143 3.114.841 4.003 2.099-1.589.964-2.376 2.314-2.36 4.047.014 1.35.504 2.473 1.466 3.365.436.413.923.733 1.466.96-.118.342-.243.67-.376.987zM15.998 2.38c0 1.062-.388 2.054-1.161 2.971-.933 1.092-2.062 1.722-3.286 1.622a3.3 3.3 0 01-.025-.402c0-1.02.444-2.111 1.232-3.002.394-.452.893-.827 1.498-1.127.604-.296 1.176-.46 1.713-.49.016.143.029.286.029.428z"/></svg>
@@ -364,7 +396,7 @@
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M10 18h4"/></svg>
                         </div>
                         <h3 data-i18n="features.f4_title">Truly standalone</h3>
-                        <p data-i18n="features.f4_body">The watch talks to Somfy cloud directly. Leave your iPhone behind, your blinds still listen.</p>
+                        <p data-i18n="features.f4_body">After the first sign-in, the watch talks to your TaHoma box through the Somfy cloud directly. Your iPhone stays home; the blinds still answer.</p>
                     </article>
                 </div>
             </div>
@@ -438,7 +470,7 @@
                 <div class="showcase-text">
                     <p class="eyebrow" data-i18n="showcase.eyebrow">A whole house at a glance</p>
                     <h2 data-i18n="showcase.title">One swipe per blind. Or all of them at once.</h2>
-                    <p data-i18n="showcase.body">List every blind on your Somfy account, themed with the colour you actually have on your house. Open the All view to crown-control every blind in the room in parallel. Stop, My, set tilt, they all answer.</p>
+                    <p data-i18n="showcase.body">List every blind paired with your TaHoma box, themed with the colour you actually have on your house. Open the All view to crown-control every blind in the room in parallel. Stop, My, set tilt, they all answer.</p>
                 </div>
             </div>
         </section>
@@ -452,7 +484,7 @@
                         <img class="howto-img" data-step="1" src="/assets/step1.png" alt="" loading="lazy">
                         <span class="step-num">1</span>
                         <h3 data-i18n="how.s1_title">Sign in on iPhone</h3>
-                        <p data-i18n="how.s1_body">Open Slatly on your iPhone, enter your Somfy / TaHoma credentials. They never leave your device unencrypted.</p>
+                        <p data-i18n="how.s1_body">Open Slatly on your iPhone, enter your Somfy / TaHoma / Connexoon account. They never leave your device unencrypted.</p>
                     </li>
                     <li>
                         <img class="howto-img" data-step="2" src="/assets/step2.png" alt="" loading="lazy">
@@ -464,9 +496,34 @@
                         <img class="howto-img" data-step="3" src="/assets/step3.png" alt="" loading="lazy">
                         <span class="step-num">3</span>
                         <h3 data-i18n="how.s3_title">Leave the phone behind</h3>
-                        <p data-i18n="how.s3_body">From here on, the watch talks to Somfy cloud directly over LTE or Wi-Fi. Free your hands; the blinds answer to your wrist.</p>
+                        <p data-i18n="how.s3_body">From here on, the watch talks to the Somfy cloud directly over LTE or Wi-Fi, which then relays commands to your TaHoma box at home. Free your hands; the blinds answer to your wrist.</p>
                     </li>
                 </ol>
+            </div>
+        </section>
+
+        <section class="facts" id="facts">
+            <div class="container">
+                <p class="eyebrow" data-i18n="facts.eyebrow">At a glance</p>
+                <h2 data-i18n="facts.title">Quick facts.</h2>
+                <ul class="facts-list">
+                    <li>
+                        <h3 data-i18n="facts.f1_title">Standalone over LTE</h3>
+                        <p data-i18n="facts.f1_body">After first sign-in, the Apple Watch talks to the Somfy cloud directly. No iPhone tether, no local hub, no Bluetooth proximity required.</p>
+                    </li>
+                    <li>
+                        <h3 data-i18n="facts.f2_title">Reuses your existing TaHoma box</h3>
+                        <p data-i18n="facts.f2_body">No new hardware, no second app on your phone. Slatly drives the same Somfy Connexoon, TaHoma or Cozytouch box that already controls your blinds.</p>
+                    </li>
+                    <li>
+                        <h3 data-i18n="facts.f3_title">Open source, MIT licensed</h3>
+                        <p data-i18n="facts.f3_body">Full Swift source on GitHub. No analytics, no tracking, no servers — credentials live only in iCloud Keychain under your Apple ID.</p>
+                    </li>
+                    <li>
+                        <h3 data-i18n="facts.f4_title">Five languages</h3>
+                        <p data-i18n="facts.f4_body">EN, CS, DE, FR, ES — each language is a pre-rendered URL with its own meta, structured data and on-page copy.</p>
+                    </li>
+                </ul>
             </div>
         </section>
 
@@ -477,23 +534,39 @@
                 <div class="faq-list">
                     <details>
                         <summary data-i18n="faq.q1">Which blinds work?</summary>
-                        <p data-i18n="faq.a1">Any Somfy ExteriorVenetianBlind device registered on a Connexoon, TaHoma or Cozytouch box. If you can open/close them in the Somfy app, Slatly will see them.</p>
+                        <p data-i18n="faq.a1">Any motorised exterior venetian blind paired with a Somfy TaHoma, Connexoon or Cozytouch box — Somfy itself, plus io-homecontrol / RTS partner brands (Profalux, Asio, Eltako and others your box already supports). If they show up in the Somfy / TaHoma app, Slatly will see them.</p>
                     </details>
                     <details>
                         <summary data-i18n="faq.q2">Do I need an iPhone nearby?</summary>
-                        <p data-i18n="faq.a2">Only the first time, to sign in. After credentials sync via iCloud Keychain, the Watch app runs fully standalone over LTE or Wi-Fi.</p>
+                        <p data-i18n="faq.a2">Only the first time, to sign in. After credentials sync via iCloud Keychain (or via the built-in Watch hand-off), the Watch app runs fully standalone over LTE or Wi-Fi.</p>
                     </details>
                     <details>
-                        <summary data-i18n="faq.q3">Where are my credentials stored?</summary>
-                        <p data-i18n="faq.a3">In Apple's iCloud Keychain, end-to-end encrypted under your Apple ID. The app itself never sends them to any third party, only to Somfy's official OAuth endpoint.</p>
+                        <summary data-i18n="faq.q3">Do I need extra hardware?</summary>
+                        <p data-i18n="faq.a3">No new hardware. Slatly reuses the Somfy TaHoma, Connexoon or Cozytouch box that already controls your blinds. No bridge, no second hub.</p>
                     </details>
                     <details>
-                        <summary data-i18n="faq.q4">Is it open source?</summary>
-                        <p data-i18n="faq.a4">Yes. The Swift code, the OverkizKit library, and this website are all on GitHub. Contributions and translations are welcome.</p>
+                        <summary data-i18n="faq.q4">Where are my credentials stored?</summary>
+                        <p data-i18n="faq.a4">In Apple's iCloud Keychain, end-to-end encrypted under your Apple ID. The app itself never sends them to any third party, only to Somfy's official OAuth endpoint.</p>
                     </details>
                     <details>
-                        <summary data-i18n="faq.q5">When is it on the App Store?</summary>
-                        <p data-i18n="faq.a5">A TestFlight build is in active polish. Public App Store release follows once the iCloud sync capability work is signed off. Join the TestFlight to get early access.</p>
+                        <summary data-i18n="faq.q5">Is it open source?</summary>
+                        <p data-i18n="faq.a5">Yes. The Swift code, the OverkizKit library, and this website are all on GitHub. Contributions and translations are welcome.</p>
+                    </details>
+                    <details>
+                        <summary data-i18n="faq.q6">Is it on the App Store?</summary>
+                        <p data-i18n="faq.a6">Yes — Slatly is live on the App Store for $0.99 / a few crowns. One-time purchase, no subscription.</p>
+                    </details>
+                    <details>
+                        <summary data-i18n="faq.q7">Can I control Somfy blinds from Apple Watch without the iPhone?</summary>
+                        <p data-i18n="faq.a7">Yes, that's exactly what Slatly is built for. After a one-time iPhone sign-in, the Watch app runs fully standalone over LTE or Wi-Fi. Your iPhone can be downstairs, off, or out of Bluetooth range.</p>
+                    </details>
+                    <details>
+                        <summary data-i18n="faq.q8">What Apple Watch apps work with Somfy TaHoma?</summary>
+                        <p data-i18n="faq.a8">Slatly is purpose-built for the Somfy ExteriorVenetianBlind class on Connexoon, TaHoma and Cozytouch boxes — and it's the only third-party watchOS app that drives them standalone, without proxying every command through the iPhone.</p>
+                    </details>
+                    <details>
+                        <summary data-i18n="faq.q9">How is Slatly different from the official Somfy app?</summary>
+                        <p data-i18n="faq.a9">Slatly focuses entirely on the Apple Watch experience: real Crown-driven slat tilt, drag-to-closure gestures and standalone operation without the iPhone. The Somfy app remains useful for box setup and firmware updates; Slatly is the daily driver from your wrist.</p>
                     </details>
                 </div>
             </div>

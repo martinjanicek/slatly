@@ -1,71 +1,93 @@
 {
     "meta": {
-        "title": "Slatly, pilotez vos stores Somfy depuis l'Apple Watch",
-        "description": "Pilotez vos stores vénitiens extérieurs Somfy directement depuis l'Apple Watch. Inclinez les lames avec la couronne, glissez pour fermer. Pas d'iPhone, pas de hub à l'usage."
+        "title": "Slatly, contrôleur Apple Watch pour stores via TaHoma",
+        "description": "Pilote tes stores extérieurs depuis Apple Watch via ta box Somfy TaHoma, Connexoon ou Cozytouch existante. Inclinaison avec la Digital Crown, glissement pour fermer."
     },
     "nav": {
-        "features": "Fonctionnalités",
+        "features": "Fonctions",
         "how": "Comment ça marche",
         "faq": "FAQ",
         "github": "GitHub"
     },
     "hero": {
         "eyebrow": "Pour Apple Watch",
-        "title": "Vos stores. Au poignet.",
-        "sub": "Pilotez les stores vénitiens extérieurs Somfy directement depuis l'Apple Watch. Inclinez les lames avec la couronne, glissez pour fermer. Pas d'iPhone, pas de hub, pas de passerelle à l'usage.",
+        "title": "Tes stores. Toujours à portée de main.",
+        "sub": "Pilote tes stores extérieurs directement depuis l'Apple Watch — via la box Somfy TaHoma, Connexoon ou Cozytouch que tu possèdes déjà. Incline les lames avec la Digital Crown, glisse vers le bas pour fermer. Pas besoin d'iPhone au quotidien, juste la montre et ton Wi-Fi.",
         "cta_primary": "Rejoindre TestFlight",
-        "cta_secondary": "Voir comment ça marche",
-        "meta": "Compatible avec Somfy Connexoon, TaHoma et Cozytouch · watchOS 10+ · Disponible en EN, CS, DE, FR, ES"
+        "cta_secondary": "Voir comment",
+        "meta": "Compatible Somfy Connexoon, TaHoma et Cozytouch · watchOS 10+ · Disponible en EN, CS, DE, FR, ES",
+        "cta_appstore_top": "Télécharger dans",
+        "cta_github_top": "Code source sur"
     },
     "features": {
-        "eyebrow": "Pensé pour le poignet",
-        "title": "Vous n'avez besoin de rien d'autre.",
+        "eyebrow": "Conçu pour le poignet",
+        "title": "Rien de plus.",
         "f1_title": "Couronne = lames",
-        "f1_body": "Tournez la couronne pour incliner les lames d'ouvert à fermé. Retour haptique à chaque cran.",
-        "f2_title": "Glissez = fermeture",
-        "f2_body": "Un balayage vertical règle la fermeture précise de 0 à 100 %. Fermeture et inclinaison partent ensemble, une commande, un cycle moteur.",
-        "f3_title": "Scènes pour chaque jour",
-        "f3_body": "« Matin », « Ombre », « Nuit ». Enregistrez des préréglages multi-stores et lancez-les d'un seul geste. On édite sur l'iPhone, on lance depuis le poignet.",
+        "f1_body": "Tourne la Digital Crown pour incliner les lames de ouvertes à fermées. Retour haptique à chaque cran.",
+        "f2_title": "Glissement = fermeture",
+        "f2_body": "Un glissement vertical règle la fermeture exacte 0–100 %. Fermeture et inclinaison partent ensemble — une commande, un cycle moteur.",
+        "f3_title": "Scènes du quotidien",
+        "f3_body": "« Matin », « Ombre », « Nuit ». Enregistre des préréglages multi-stores et lance-les d'un tap. Édite sur iPhone, exécute au poignet.",
         "f4_title": "Vraiment autonome",
-        "f4_body": "La montre parle directement au cloud Somfy. Laissez l'iPhone à la maison, vos stores répondent toujours."
+        "f4_body": "Après la première connexion, la montre dialogue directement avec ta box TaHoma via le cloud Somfy. Laisse ton iPhone à la maison, les stores répondent quand même."
     },
     "showcase": {
         "eyebrow": "Toute la maison d'un coup d'œil",
         "title": "Un geste par store. Ou tous d'un coup.",
-        "body": "Liste tous les stores de votre compte Somfy, colorés comme ceux installés sur votre façade. La vue Tous pilote tout le séjour en parallèle via la couronne. Stop, My, inclinaison, tous répondent."
+        "body": "Liste tous les stores associés à ta box TaHoma, colorés selon ce que tu as vraiment chez toi. Dans la vue Tous, contrôle-les en parallèle avec la couronne. Stop, My, réglage d'inclinaison — tous répondent."
     },
     "how": {
         "eyebrow": "Configuration en moins d'une minute",
         "title": "Comment ça marche.",
-        "s1_title": "Connectez-vous sur l'iPhone",
-        "s1_body": "Ouvrez Slatly sur l'iPhone, saisissez vos identifiants Somfy / TaHoma. Ils ne quittent jamais l'appareil en clair.",
-        "s2_title": "Le trousseau iCloud synchronise sur la montre",
-        "s2_body": "Les identifiants passent par le trousseau iCloud vers votre Apple Watch jumelée, souvent en quelques secondes. Aucun appairage supplémentaire.",
-        "s3_title": "Laissez le téléphone derrière vous",
-        "s3_body": "À partir d'ici, la montre parle directement au cloud Somfy via LTE ou Wi-Fi. Mains libres, les stores écoutent le poignet."
+        "s1_title": "Connecte-toi sur iPhone",
+        "s1_body": "Ouvre Slatly sur ton iPhone, saisis tes identifiants Somfy / TaHoma / Connexoon. Ils ne quittent ton appareil qu'en chiffré.",
+        "s2_title": "Trousseau iCloud vers la Watch",
+        "s2_body": "Les identifiants arrivent via le Trousseau iCloud sur ton Apple Watch jumelée, généralement en quelques secondes. Aucun jumelage supplémentaire.",
+        "s3_title": "Laisse le téléphone",
+        "s3_body": "À partir de là, la montre parle directement au cloud Somfy via LTE ou Wi-Fi, qui relaie ensuite les commandes à ta box TaHoma à la maison. Mains libres, les stores obéissent au poignet."
     },
     "faq": {
         "eyebrow": "Bon à savoir",
         "title": "Questions fréquentes.",
         "q1": "Quels stores fonctionnent ?",
-        "a1": "Tout appareil Somfy ExteriorVenetianBlind enregistré sur une box Connexoon, TaHoma ou Cozytouch. Si vous pouvez les ouvrir/fermer dans l'app Somfy, Slatly les voit.",
+        "a1": "Tout store extérieur motorisé associé à une box Somfy TaHoma, Connexoon ou Cozytouch — Somfy plus les marques partenaires io-homecontrol / RTS (Profalux, Asio, Eltako et autres déjà prises en charge par ta box). S'ils apparaissent dans l'app Somfy / TaHoma, Slatly les verra aussi.",
         "q2": "Faut-il un iPhone à proximité ?",
-        "a2": "Seulement la première fois pour la connexion. Après la synchro via le trousseau iCloud, l'app Watch fonctionne pleinement en autonomie via LTE ou Wi-Fi.",
-        "q3": "Où sont stockés mes identifiants ?",
-        "a3": "Dans le trousseau iCloud d'Apple, chiffrés de bout en bout sous votre identifiant Apple. L'app ne les envoie nulle part ailleurs, uniquement à l'endpoint OAuth officiel de Somfy.",
-        "q4": "Est-ce open source ?",
-        "a4": "Oui. Le code Swift, la bibliothèque OverkizKit et ce site sont sur GitHub. Contributions et traductions bienvenues.",
-        "q5": "Quand sur l'App Store ?",
-        "a5": "Une build TestFlight est en cours de finalisation. La sortie publique suivra une fois la capability iCloud sync validée. Inscrivez-vous au TestFlight pour un accès anticipé."
+        "a2": "Seulement la première fois pour se connecter. Après synchronisation via Trousseau iCloud (ou via le hand-off Watch direct), l'app Watch tourne en autonomie via LTE ou Wi-Fi.",
+        "q3": "Faut-il du matériel supplémentaire ?",
+        "a3": "Aucun nouveau matériel. Slatly réutilise la box Somfy TaHoma, Connexoon ou Cozytouch qui pilote déjà tes stores. Pas de pont, pas de second hub.",
+        "q4": "Où sont stockés mes identifiants ?",
+        "a4": "Dans le Trousseau iCloud d'Apple, chiffrés de bout en bout sous ton identifiant Apple. L'app ne les envoie à aucun tiers, uniquement au point OAuth officiel de Somfy.",
+        "q5": "Est-ce open source ?",
+        "a5": "Oui. Le code Swift, la bibliothèque OverkizKit et ce site sont tous sur GitHub. Contributions et traductions bienvenues.",
+        "q6": "Est-ce sur l'App Store ?",
+        "a6": "Oui — Slatly est disponible sur l'App Store pour 0,99 €. Achat unique, sans abonnement.",
+        "q7": "Puis-je piloter mes stores Somfy depuis l'Apple Watch sans l'iPhone ?",
+        "a7": "Oui, c'est exactement à ça que sert Slatly. Après une connexion unique sur l'iPhone, l'app Watch tourne en complète autonomie via LTE ou Wi-Fi. Ton iPhone peut être en bas, éteint ou hors de portée Bluetooth.",
+        "q8": "Quelles apps Apple Watch fonctionnent avec Somfy TaHoma ?",
+        "a8": "Slatly est conçue spécifiquement pour la classe Somfy ExteriorVenetianBlind sur les box Connexoon, TaHoma et Cozytouch — et c'est la seule app watchOS tierce qui les pilote en autonomie, sans faire transiter chaque commande par l'iPhone.",
+        "q9": "Quelle est la différence entre Slatly et l'app Somfy officielle ?",
+        "a9": "Slatly se concentre entièrement sur l'expérience Apple Watch : inclinaison des lames à la couronne, glisser pour la fermeture et fonctionnement autonome sans iPhone. L'app Somfy reste utile pour configurer la box et le firmware ; Slatly est l'usage quotidien depuis le poignet."
+    },
+    "facts": {
+        "eyebrow": "En bref",
+        "title": "Faits clés.",
+        "f1_title": "Autonome via LTE",
+        "f1_body": "Après la première connexion, l'Apple Watch parle directement au cloud Somfy. Pas de lien iPhone, pas de hub local, pas de proximité Bluetooth requise.",
+        "f2_title": "Réutilise ta box TaHoma",
+        "f2_body": "Aucun matériel neuf, aucune deuxième app sur le téléphone. Slatly pilote la même box Somfy Connexoon, TaHoma ou Cozytouch qui commande déjà tes stores.",
+        "f3_title": "Open source, licence MIT",
+        "f3_body": "Code Swift complet sur GitHub. Aucun analytics, aucun tracking, aucun serveur — les identifiants vivent uniquement dans le Trousseau iCloud sous ton identifiant Apple.",
+        "f4_title": "Cinq langues",
+        "f4_body": "EN, CS, DE, FR, ES — chaque langue a sa propre URL pré-rendue avec ses meta tags, ses données structurées et son texte."
     },
     "cta": {
         "title": "Prêt à ranger la télécommande ?",
-        "body": "Téléchargez Slatly sur votre Apple Watch et oubliez l'interrupteur mural.",
+        "body": "Installe Slatly sur ton Apple Watch et oublie l'interrupteur mural.",
         "primary": "Rejoindre TestFlight",
         "secondary": "Voir sur GitHub"
     },
     "footer": {
-        "fineprint": "Slatly est un projet indépendant, ni affilié à ni approuvé par Somfy SA. Somfy®, TaHoma®, Connexoon® et Cozytouch® sont des marques de leurs propriétaires respectifs."
+        "fineprint": "Slatly est un projet indépendant, ni affilié ni soutenu par Somfy SA. Somfy®, TaHoma®, Connexoon® et Cozytouch® sont des marques de leurs propriétaires respectifs."
     },
     "mock": {
         "brand": "Slatly",

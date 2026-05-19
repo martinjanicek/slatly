@@ -132,14 +132,19 @@ function applyJsonLd(html, lang) {
     const dict = dicts[lang.code];
     const url = pageUrl(lang);
 
-    const faqMain = ['q1', 'q2', 'q3', 'q4', 'q5'].map((qk, i) => {
-        const ak = 'a' + (i + 1);
-        return {
-            '@type': 'Question',
-            name: dict.faq[qk],
-            acceptedAnswer: { '@type': 'Answer', text: dict.faq[ak] },
-        };
-    });
+    // Pick up every q1/a1 … qN/aN pair the dictionary provides, so adding
+    // a question to the JSON files automatically lands in the JSON-LD FAQ.
+    const faqMain = Object.keys(dict.faq)
+        .filter((k) => /^q\d+$/.test(k))
+        .sort((a, b) => Number(a.slice(1)) - Number(b.slice(1)))
+        .map((qk) => {
+            const ak = 'a' + qk.slice(1);
+            return {
+                '@type': 'Question',
+                name: dict.faq[qk],
+                acceptedAnswer: { '@type': 'Answer', text: dict.faq[ak] },
+            };
+        });
 
     const graph = [
         {
