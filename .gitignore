@@ -11,12 +11,10 @@ build/
 *.xcarchive/
 *.ipa
 
-## Local secrets — never commit
-App/Secrets.swift
-
 ## macOS
 .DS_Store
 
 ## VS Code etc.
 .vscode/
 .idea/
+.wrangler/

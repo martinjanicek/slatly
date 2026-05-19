@@ -16,7 +16,7 @@ public actor OverkizClient {
             somfyTokenURL: URL,
             clientID: String,
             clientSecret: String,
-            label: String = "Žaluzky"
+            label: String = "Slatly"
         ) {
             self.baseURL = baseURL
             self.somfyTokenURL = somfyTokenURL

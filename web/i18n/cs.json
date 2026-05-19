@@ -1,0 +1,77 @@
+{
+    "meta": {
+        "title": "Slatly, ovládání Somfy žaluzií z Apple Watch",
+        "description": "Ovládej Somfy venkovní žaluzie přímo z Apple Watch. Korunka naklápí lamely, tah prstem zavírá. Bez iPhonu, bez hubu, bez bridge, vše přes Somfy cloud."
+    },
+    "nav": {
+        "features": "Funkce",
+        "how": "Jak to funguje",
+        "faq": "FAQ",
+        "github": "GitHub"
+    },
+    "hero": {
+        "eyebrow": "Pro Apple Watch",
+        "title": "Tvoje žaluzie. Na zápěstí.",
+        "sub": "Ovládej Somfy venkovní žaluzie přímo z Apple Watch. Korunkou naklápíš lamely, tahem prstu zavíráš. Bez iPhonu, bez hubu, bez bridge, jen hodinky a Somfy cloud.",
+        "cta_primary": "Přidat se do TestFlight",
+        "cta_secondary": "Podívat se jak to funguje",
+        "meta": "Funguje s Somfy Connexoon, TaHoma i Cozytouch · watchOS 10+ · K dispozici v EN, CS, DE, FR, ES"
+    },
+    "features": {
+        "eyebrow": "Postavené na míru zápěstí",
+        "title": "Nemusíš sahat jinam.",
+        "f1_title": "Korunka = lamely",
+        "f1_body": "Otáčením Digital Crown naklápíš lamely od plně otevřených po zavřené. Haptická odezva v každém kroku.",
+        "f2_title": "Drag = výjezd",
+        "f2_body": "Vertikální tah nastaví přesný výjezd 0–100 %. Výjezd a naklopení odejdou společně, jeden příkaz, jeden cyklus motoru.",
+        "f3_title": "Scény pro každý den",
+        "f3_body": "„Ráno“, „Stínění“, „Noc“. Ulož si předvolby pro víc žaluzií a spusť je jedním tapem. Edituješ na iPhonu, spouštíš ze zápěstí.",
+        "f4_title": "Opravdu standalone",
+        "f4_body": "Hodinky mluví s Somfy cloudem přímo. Nech iPhone doma, žaluzie tě stejně poslechnou."
+    },
+    "showcase": {
+        "eyebrow": "Celý dům na první pohled",
+        "title": "Jedno gesto na žaluzii. Nebo na všechny naráz.",
+        "body": "Zobrazí všechny žaluzie z tvého Somfy účtu, obarvené podle skutečné barvy na fasádě. V přehledu Vše ovládáš korunkou všechny v jednom kroku. Stop, My, nastavení naklopení, odpoví všechny."
+    },
+    "how": {
+        "eyebrow": "Nastavení za minutu",
+        "title": "Jak to funguje.",
+        "s1_title": "Přihlas se na iPhonu",
+        "s1_body": "Otevři Slatly na iPhonu, zadej svoje Somfy / TaHoma přihlášení. Z tvého zařízení odejde jen šifrovaně.",
+        "s2_title": "iCloud Klíčenka sync na hodinky",
+        "s2_body": "Přihlašovací údaje doputují přes iCloud Klíčenku na spárované Apple Watch, obvykle do několika vteřin. Žádné další párování.",
+        "s3_title": "Nech telefon doma",
+        "s3_body": "Od teď hodinky mluví s Somfy cloudem přímo přes LTE nebo Wi-Fi. Volné ruce, žaluzie poslouchají zápěstí."
+    },
+    "faq": {
+        "eyebrow": "Dobré vědět",
+        "title": "Časté dotazy.",
+        "q1": "Které žaluzie fungují?",
+        "a1": "Jakékoli Somfy ExteriorVenetianBlind zařízení registrované v Connexoon, TaHoma nebo Cozytouch boxu. Když je otevřeš/zavřeš v Somfy appce, uvidí je i Slatly.",
+        "q2": "Potřebuju iPhone v dosahu?",
+        "a2": "Jen poprvé pro přihlášení. Po sync přes iCloud Klíčenku běží watch app plně standalone přes LTE nebo Wi-Fi.",
+        "q3": "Kde jsou uložené přihlašovací údaje?",
+        "a3": "V iCloud Klíčence Apple, end-to-end šifrované pod tvé Apple ID. Aplikace je neposílá nikam jinam, pouze na oficiální Somfy OAuth endpoint.",
+        "q4": "Je to open source?",
+        "a4": "Ano. Swift kód, knihovna OverkizKit i tahle stránka jsou na GitHubu. Příspěvky a překlady vítáme.",
+        "q5": "Kdy bude v App Store?",
+        "a5": "TestFlight build je v aktivním ladění. Veřejný App Store release přijde po dokončení iCloud sync capabilities. Připoj se k TestFlight pro early access."
+    },
+    "cta": {
+        "title": "Připraven hodit ovladač do šuplíku?",
+        "body": "Stáhni si Slatly na Apple Watch a už nikdy nesahej po vypínači u okna.",
+        "primary": "Přidat se do TestFlight",
+        "secondary": "Zobrazit na GitHubu"
+    },
+    "footer": {
+        "fineprint": "Slatly je nezávislý projekt nesvázaný s ani podporovaný od Somfy SA. Somfy®, TaHoma®, Connexoon® a Cozytouch® jsou ochranné známky příslušných vlastníků."
+    },
+    "mock": {
+        "brand": "Slatly",
+        "bedroom": "Ložnice",
+        "living": "Obývák",
+        "kitchen": "Kuchyně",
+        "morning": "Ráno"
+    }
+}

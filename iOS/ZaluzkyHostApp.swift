@@ -4,13 +4,14 @@ import SwiftUI
 struct ZaluzkyHostApp: App {
     @StateObject private var appState = IOSAppState()
 
+    init() {
+        // Boot WatchConnectivity so paired-Watch scene sync starts immediately.
+        _ = SceneSync.shared
+    }
+
     var body: some Scene {
         WindowGroup {
-            if appState.isSignedIn {
-                SignedInView(appState: appState)
-            } else {
-                LoginView(appState: appState)
-            }
+            RootView(appState: appState)
         }
     }
 }

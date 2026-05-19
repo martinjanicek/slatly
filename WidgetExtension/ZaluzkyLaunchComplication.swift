@@ -9,8 +9,8 @@ struct ZaluzkyLaunchComplication: Widget {
             LaunchComplicationView()
                 .containerBackground(.fill.tertiary, for: .widget)
         }
-        .configurationDisplayName("Žaluzky")
-        .description("Spustit ovládání žaluzií jedním tapnutím.")
+        .configurationDisplayName("Slatly")
+        .description("Launch blind control with a single tap.")
         .supportedFamilies([
             .accessoryCircular,
             .accessoryCorner,
@@ -48,19 +48,19 @@ struct LaunchComplicationView: View {
         case .accessoryCorner:
             BlindsGlyph()
                 .font(.system(size: 18, weight: .semibold))
-                .widgetLabel("Žaluzky")
+                .widgetLabel("Slatly")
         case .accessoryRectangular:
             HStack(spacing: 8) {
                 BlindsGlyph()
                     .font(.system(size: 22, weight: .semibold))
                 VStack(alignment: .leading, spacing: 1) {
-                    Text("Žaluzky").font(.headline)
+                    Text("Slatly").font(.headline)
                     Text("Tap to open").font(.caption2).foregroundStyle(.secondary)
                 }
                 Spacer(minLength: 0)
             }
         case .accessoryInline:
-            Label("Žaluzky", systemImage: "blinds.horizontal.closed")
+            Label("Slatly", systemImage: "blinds.horizontal.closed")
         default:
             EmptyView()
         }

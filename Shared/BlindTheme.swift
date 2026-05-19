@@ -13,13 +13,13 @@ enum BlindTheme: String, CaseIterable, Identifiable {
 
     var displayName: String {
         switch self {
-        case .classic: return "Modrá"
-        case .white: return "Bílá"
-        case .silver: return "Stříbrná"
-        case .anthracite: return "Antracit"
-        case .beige: return "Béžová"
-        case .brown: return "Hnědá"
-        case .forest: return "Zelená"
+        case .classic: return String(localized: "Blue")
+        case .white: return String(localized: "White")
+        case .silver: return String(localized: "Silver")
+        case .anthracite: return String(localized: "Anthracite")
+        case .beige: return String(localized: "Beige")
+        case .brown: return String(localized: "Brown")
+        case .forest: return String(localized: "Green")
         }
     }
 

@@ -40,8 +40,13 @@ struct TiltView: View {
                 HStack(spacing: 6) {
                     Button { Task { await sendMy() } } label: {
                         Image(systemName: "star.fill")
-                            .font(.system(size: 12, weight: .semibold))
+                            .font(.system(size: 14, weight: .semibold))
                             .foregroundStyle(.tint)
+                            .frame(width: 44, height: 28)
+                            .background(
+                                Capsule().fill(.tint.opacity(0.18))
+                            )
+                            .contentShape(Capsule())
                     }
                     .buttonStyle(.plain)
                     statusIndicator
@@ -49,7 +54,7 @@ struct TiltView: View {
                 Spacer(minLength: 0)
                 ValueChip(systemImage: "rectangle.compress.vertical", value: Int(tilt))
             }
-            .frame(height: 18)
+            .frame(height: 30)
         }
         .padding(.horizontal, 4)
         .padding(.vertical, 2)
@@ -63,7 +68,7 @@ struct TiltView: View {
         )
         .onChange(of: tilt) { _, _ in scheduleSend() }
         .sensoryFeedback(.error, trigger: status == .failed)
-        .navigationTitle(device.label ?? "?")
+        .navigationTitle(displayName(for: device))
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {

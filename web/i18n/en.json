@@ -1,0 +1,77 @@
+{
+    "meta": {
+        "title": "Slatly, Apple Watch controller for Somfy blinds",
+        "description": "Control your Somfy exterior venetian blinds straight from Apple Watch. Tilt with the Digital Crown, drag to close. No iPhone, no hub required at runtime."
+    },
+    "nav": {
+        "features": "Features",
+        "how": "How it works",
+        "faq": "FAQ",
+        "github": "GitHub"
+    },
+    "hero": {
+        "eyebrow": "For Apple Watch",
+        "title": "Your blinds, on your wrist.",
+        "sub": "Control Somfy exterior venetian blinds straight from Apple Watch. Tilt the slats with the Digital Crown, drag down to close. No iPhone, no hub, no bridge needed at runtime.",
+        "cta_primary": "Join TestFlight",
+        "cta_secondary": "See how it works",
+        "meta": "Works with Somfy Connexoon, TaHoma and Cozytouch · watchOS 10+ · Available in EN, CS, DE, FR, ES"
+    },
+    "features": {
+        "eyebrow": "Built for the wrist",
+        "title": "Touch nothing else.",
+        "f1_title": "Crown = slats",
+        "f1_body": "Rotate the Digital Crown to tilt slats from open to fully closed. Haptic feedback at every stop.",
+        "f2_title": "Drag = closure",
+        "f2_body": "A vertical swipe sets exact closure 0–100%. Closure and tilt commit together, one command, one motor cycle.",
+        "f3_title": "Scenes for everyday",
+        "f3_body": "\"Morning\", \"Shade\", \"Night\". Save multi-blind presets and run them with a single tap. Edit on iPhone, run from the wrist.",
+        "f4_title": "Truly standalone",
+        "f4_body": "The watch talks to Somfy cloud directly. Leave your iPhone behind, your blinds still listen."
+    },
+    "showcase": {
+        "eyebrow": "A whole house at a glance",
+        "title": "One swipe per blind. Or all of them at once.",
+        "body": "List every blind on your Somfy account, themed with the colour you actually have on your house. Open the All view to crown-control every blind in the room in parallel. Stop, My, set tilt, they all answer."
+    },
+    "how": {
+        "eyebrow": "Setup in under a minute",
+        "title": "How it works.",
+        "s1_title": "Sign in on iPhone",
+        "s1_body": "Open Slatly on your iPhone, enter your Somfy / TaHoma credentials. They never leave your device unencrypted.",
+        "s2_title": "iCloud Keychain syncs to Watch",
+        "s2_body": "Credentials travel through iCloud Keychain to your paired Apple Watch, usually within seconds. No extra pairing required.",
+        "s3_title": "Leave the phone behind",
+        "s3_body": "From here on, the watch talks to Somfy cloud directly over LTE or Wi-Fi. Free your hands; the blinds answer to your wrist."
+    },
+    "faq": {
+        "eyebrow": "Good to know",
+        "title": "Frequently asked.",
+        "q1": "Which blinds work?",
+        "a1": "Any Somfy ExteriorVenetianBlind device registered on a Connexoon, TaHoma or Cozytouch box. If you can open/close them in the Somfy app, Slatly will see them.",
+        "q2": "Do I need an iPhone nearby?",
+        "a2": "Only the first time, to sign in. After credentials sync via iCloud Keychain, the Watch app runs fully standalone over LTE or Wi-Fi.",
+        "q3": "Where are my credentials stored?",
+        "a3": "In Apple's iCloud Keychain, end-to-end encrypted under your Apple ID. The app itself never sends them to any third party, only to Somfy's official OAuth endpoint.",
+        "q4": "Is it open source?",
+        "a4": "Yes. The Swift code, the OverkizKit library, and this website are all on GitHub. Contributions and translations are welcome.",
+        "q5": "When is it on the App Store?",
+        "a5": "A TestFlight build is in active polish. Public App Store release follows once the iCloud sync capability work is signed off. Join the TestFlight to get early access."
+    },
+    "cta": {
+        "title": "Ready to ditch the remote?",
+        "body": "Get Slatly on your Apple Watch and never reach for the wall switch again.",
+        "primary": "Join TestFlight",
+        "secondary": "View on GitHub"
+    },
+    "footer": {
+        "fineprint": "Slatly is an independent project not affiliated with or endorsed by Somfy SA. Somfy®, TaHoma®, Connexoon® and Cozytouch® are trademarks of their respective owners."
+    },
+    "mock": {
+        "brand": "Slatly",
+        "bedroom": "Bedroom",
+        "living": "Living room",
+        "kitchen": "Kitchen",
+        "morning": "Morning"
+    }
+}

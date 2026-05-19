@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="meta.title">Slatly, Apple Watch controller for Somfy blinds</title>
+    <meta name="description" data-i18n="meta.description" content="Control your Somfy exterior venetian blinds straight from Apple Watch. Tilt with the Digital Crown, drag to close. No iPhone, no hub required at runtime.">
+    <meta name="theme-color" content="#0e1530">
+    <meta property="og:title" content="Slatly">
+    <meta property="og:description" content="Control your Somfy blinds from Apple Watch.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a class="brand" href="#top">
+                <span class="brand-mark" aria-hidden="true">
+                    <span class="brand-mark-slat"></span>
+                    <span class="brand-mark-slat"></span>
+                    <span class="brand-mark-slat"></span>
+                </span>
+                <span class="brand-name">Slatly</span>
+            </a>
+            <nav class="topnav">
+                <a href="#features" data-i18n="nav.features">Features</a>
+                <a href="#how" data-i18n="nav.how">How it works</a>
+                <a href="#faq" data-i18n="nav.faq">FAQ</a>
+                <a class="topnav-github" href="https://github.com/martinjanicek/slatly" target="_blank" rel="noopener" data-i18n="nav.github">GitHub</a>
+            </nav>
+            <div class="lang-switcher">
+                <button type="button" class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
+                    <span id="langCurrent">EN</span>
+                    <svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                </button>
+                <ul class="lang-menu" id="langMenu" role="listbox" hidden>
+                    <li><button data-lang="en" role="option">English</button></li>
+                    <li><button data-lang="cs" role="option">Čeština</button></li>
+                    <li><button data-lang="de" role="option">Deutsch</button></li>
+                    <li><button data-lang="fr" role="option">Français</button></li>
+                    <li><button data-lang="es" role="option">Español</button></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main id="top">
+        <section class="hero">
+            <div class="hero-bg" aria-hidden="true">
+                <div class="hero-glow"></div>
+            </div>
+            <div class="hero-inner">
+                <div class="hero-text">
+                    <p class="eyebrow" data-i18n="hero.eyebrow">For Apple Watch</p>
+                    <h1 data-i18n="hero.title">Your blinds, on your wrist.</h1>
+                    <p class="hero-sub" data-i18n="hero.sub">Control Somfy exterior venetian blinds straight from Apple Watch. Tilt the slats with the Digital Crown, drag down to close. No iPhone, no hub, no bridge needed at runtime.</p>
+                    <div class="hero-ctas">
+                        <a class="btn btn-primary" href="#" data-i18n="hero.cta_primary">Join TestFlight</a>
+                        <a class="btn btn-ghost" href="#how" data-i18n="hero.cta_secondary">See how it works</a>
+                    </div>
+                    <p class="hero-meta" data-i18n="hero.meta">Works with Somfy Connexoon, TaHoma and Cozytouch · watchOS 10+ · Available in EN, CS, DE, FR, ES</p>
+                </div>
+                <div class="hero-art" aria-hidden="true">
+                    <div class="scene">
+                        <div class="window-frame">
+                            <div class="window-pane">
+                                <div class="window-sky">
+                                    <span class="window-sun"></span>
+                                    <div class="cloud cloud-1"></div>
+                                    <div class="cloud cloud-2"></div>
+                                    <svg class="bird bird-1" viewBox="0 0 20 8" preserveAspectRatio="xMidYMid meet">
+                                        <path d="M1 5 Q5 1 10 5 Q15 1 19 5" stroke="rgba(20,30,60,0.65)" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <svg class="bird bird-2" viewBox="0 0 20 8" preserveAspectRatio="xMidYMid meet">
+                                        <path d="M1 5 Q5 1 10 5 Q15 1 19 5" stroke="rgba(20,30,60,0.55)" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="blind">
+                                    <div class="slat" style="--i:0"></div>
+                                    <div class="slat" style="--i:1"></div>
+                                    <div class="slat" style="--i:2"></div>
+                                    <div class="slat" style="--i:3"></div>
+                                    <div class="slat" style="--i:4"></div>
+                                    <div class="slat" style="--i:5"></div>
+                                    <div class="slat" style="--i:6"></div>
+                                    <div class="slat" style="--i:7"></div>
+                                </div>
+                                <div class="window-mullion"></div>
+                            </div>
+                            <div class="window-sill"></div>
+                        </div>
+
+                        <div class="device-frame device-watch hero-watch">
+                            <span class="watch-strap watch-strap-top"></span>
+                            <span class="watch-case">
+                                <span class="watch-screen">
+                                    <div class="mini-ui">
+                                        <div class="mini-brand">Slatly</div>
+                                        <div class="mini-blind">
+                                            <div class="mini-slat" style="--i:0"></div>
+                                            <div class="mini-slat" style="--i:1"></div>
+                                            <div class="mini-slat" style="--i:2"></div>
+                                            <div class="mini-slat" style="--i:3"></div>
+                                            <div class="mini-slat" style="--i:4"></div>
+                                            <div class="mini-slat" style="--i:5"></div>
+                                        </div>
+                                        <div class="mini-chips">
+                                            <span class="mini-chip">↕<b class="mini-closure">78</b></span>
+                                            <span class="mini-dot"></span>
+                                            <span class="mini-chip">◐<b class="mini-tilt">42</b></span>
+                                        </div>
+                                    </div>
+                                </span>
+                                <span class="watch-crown-nub hero-crown-nub">
+                                    <span class="crown-ridges-overlay"></span>
+                                    <div class="crown-callout">
+                                        <span class="crown-arrow">↻</span>
+                                        <span class="crown-label">Digital Crown</span>
+                                    </div>
+                                </span>
+                            </span>
+                            <span class="watch-strap watch-strap-bottom"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features" id="features">
+            <div class="container">
+                <p class="eyebrow" data-i18n="features.eyebrow">Built for the wrist</p>
+                <h2 data-i18n="features.title">Touch nothing else.</h2>
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+                        </div>
+                        <h3 data-i18n="features.f1_title">Crown = slats</h3>
+                        <p data-i18n="features.f1_body">Rotate the Digital Crown to tilt slats from open to fully closed. Haptic feedback at every stop.</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 5v14M6 11l6-6 6 6"/><path d="M6 19h12"/></svg>
+                        </div>
+                        <h3 data-i18n="features.f2_title">Drag = closure</h3>
+                        <p data-i18n="features.f2_body">A vertical swipe sets exact closure 0–100%. Closure and tilt commit together, one command, one motor cycle.</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 7l7-3 7 3v6c0 4-3 7-7 8-4-1-7-4-7-8V7z"/><path d="M9 12l2 2 4-4"/></svg>
+                        </div>
+                        <h3 data-i18n="features.f3_title">Scenes for everyday</h3>
+                        <p data-i18n="features.f3_body">"Morning", "Shade", "Night". Save multi-blind presets and run them with a single tap. Edit on iPhone, run from the wrist.</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M10 18h4"/></svg>
+                        </div>
+                        <h3 data-i18n="features.f4_title">Truly standalone</h3>
+                        <p data-i18n="features.f4_body">The watch talks to Somfy cloud directly. Leave your iPhone behind, your blinds still listen.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="showcase">
+            <div class="container">
+                <div class="showcase-art">
+                    <!-- Watch A, rooms list with scene tiles at the bottom -->
+                    <div class="device-frame device-watch watch-a" aria-hidden="true">
+                        <span class="watch-strap watch-strap-top"></span>
+                        <span class="watch-case">
+                            <span class="watch-screen">
+                                <div class="mock-watch mock-list">
+                                    <div class="mock-statusbar">
+                                        <span class="mock-time">21:30</span>
+                                        <span class="mock-title" data-i18n="mock.brand">Slatly</span>
+                                    </div>
+                                    <div class="mock-rows">
+                                        <div class="mock-row"><span class="dot dot-anth"></span><span data-i18n="mock.bedroom">Bedroom</span></div>
+                                        <div class="mock-row"><span class="dot dot-anth"></span><span data-i18n="mock.living">Living room</span></div>
+                                        <div class="mock-row"><span class="dot dot-beige"></span><span data-i18n="mock.kitchen">Kitchen</span></div>
+                                    </div>
+                                    <div class="mock-tiles">
+                                        <div class="mock-tile mock-tile-scene">
+                                            <span class="mock-tile-icon">☀</span>
+                                            <span data-i18n="mock.morning">Morning</span>
+                                        </div>
+                                        <div class="mock-tile mock-tile-my">★</div>
+                                        <div class="mock-tile mock-tile-stop">■</div>
+                                    </div>
+                                </div>
+                            </span>
+                            <span class="watch-crown-nub"></span>
+                        </span>
+                        <span class="watch-strap watch-strap-bottom"></span>
+                    </div>
+
+                    <!-- Watch B, TiltView detail with blind graphic + chips + star -->
+                    <div class="device-frame device-watch watch-b" aria-hidden="true">
+                        <span class="watch-strap watch-strap-top"></span>
+                        <span class="watch-case">
+                            <span class="watch-screen">
+                                <div class="mock-watch mock-detail">
+                                    <div class="mock-statusbar">
+                                        <span class="mock-time">21:30</span>
+                                        <span class="mock-title" data-i18n="mock.bedroom">Bedroom</span>
+                                    </div>
+                                    <div class="mock-blind">
+                                        <div class="mock-slat" style="--i:0"></div>
+                                        <div class="mock-slat" style="--i:1"></div>
+                                        <div class="mock-slat" style="--i:2"></div>
+                                        <div class="mock-slat" style="--i:3"></div>
+                                        <div class="mock-slat" style="--i:4"></div>
+                                        <div class="mock-slat" style="--i:5"></div>
+                                        <div class="mock-slat" style="--i:6"></div>
+                                        <div class="mock-slat" style="--i:7"></div>
+                                    </div>
+                                    <div class="mock-bottom-row">
+                                        <span class="mock-chip">↕ 78</span>
+                                        <span class="mock-star">★</span>
+                                        <span class="mock-chip">◐ 42</span>
+                                    </div>
+                                </div>
+                            </span>
+                            <span class="watch-crown-nub"></span>
+                        </span>
+                        <span class="watch-strap watch-strap-bottom"></span>
+                    </div>
+                </div>
+                <div class="showcase-text">
+                    <p class="eyebrow" data-i18n="showcase.eyebrow">A whole house at a glance</p>
+                    <h2 data-i18n="showcase.title">One swipe per blind. Or all of them at once.</h2>
+                    <p data-i18n="showcase.body">List every blind on your Somfy account, themed with the colour you actually have on your house. Open the All view to crown-control every blind in the room in parallel. Stop, My, set tilt, they all answer.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="howto" id="how">
+            <div class="container">
+                <p class="eyebrow" data-i18n="how.eyebrow">Setup in under a minute</p>
+                <h2 data-i18n="how.title">How it works.</h2>
+                <ol class="howto-steps">
+                    <li>
+                        <img class="howto-img" src="assets/step1.png" alt="" loading="lazy">
+                        <span class="step-num">1</span>
+                        <h3 data-i18n="how.s1_title">Sign in on iPhone</h3>
+                        <p data-i18n="how.s1_body">Open Slatly on your iPhone, enter your Somfy / TaHoma credentials. They never leave your device unencrypted.</p>
+                    </li>
+                    <li>
+                        <img class="howto-img" src="assets/step2.png" alt="" loading="lazy">
+                        <span class="step-num">2</span>
+                        <h3 data-i18n="how.s2_title">iCloud Keychain syncs to Watch</h3>
+                        <p data-i18n="how.s2_body">Credentials travel through iCloud Keychain to your paired Apple Watch, usually within seconds. No extra pairing required.</p>
+                    </li>
+                    <li>
+                        <img class="howto-img" src="assets/step3.png" alt="" loading="lazy">
+                        <span class="step-num">3</span>
+                        <h3 data-i18n="how.s3_title">Leave the phone behind</h3>
+                        <p data-i18n="how.s3_body">From here on, the watch talks to Somfy cloud directly over LTE or Wi-Fi. Free your hands; the blinds answer to your wrist.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="faq" id="faq">
+            <div class="container">
+                <p class="eyebrow" data-i18n="faq.eyebrow">Good to know</p>
+                <h2 data-i18n="faq.title">Frequently asked.</h2>
+                <div class="faq-list">
+                    <details>
+                        <summary data-i18n="faq.q1">Which blinds work?</summary>
+                        <p data-i18n="faq.a1">Any Somfy ExteriorVenetianBlind device registered on a Connexoon, TaHoma or Cozytouch box. If you can open/close them in the Somfy app, Slatly will see them.</p>
+                    </details>
+                    <details>
+                        <summary data-i18n="faq.q2">Do I need an iPhone nearby?</summary>
+                        <p data-i18n="faq.a2">Only the first time, to sign in. After credentials sync via iCloud Keychain, the Watch app runs fully standalone over LTE or Wi-Fi.</p>
+                    </details>
+                    <details>
+                        <summary data-i18n="faq.q3">Where are my credentials stored?</summary>
+                        <p data-i18n="faq.a3">In Apple's iCloud Keychain, end-to-end encrypted under your Apple ID. The app itself never sends them to any third party, only to Somfy's official OAuth endpoint.</p>
+                    </details>
+                    <details>
+                        <summary data-i18n="faq.q4">Is it open source?</summary>
+                        <p data-i18n="faq.a4">Yes. The Swift code, the OverkizKit library, and this website are all on GitHub. Contributions and translations are welcome.</p>
+                    </details>
+                    <details>
+                        <summary data-i18n="faq.q5">When is it on the App Store?</summary>
+                        <p data-i18n="faq.a5">A TestFlight build is in active polish. Public App Store release follows once the iCloud sync capability work is signed off. Join the TestFlight to get early access.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <h2 data-i18n="cta.title">Ready to ditch the remote?</h2>
+                <p data-i18n="cta.body">Get Slatly on your Apple Watch and never reach for the wall switch again.</p>
+                <div class="cta-buttons">
+                    <a class="btn btn-primary btn-lg" href="#" data-i18n="cta.primary">Join TestFlight</a>
+                    <a class="btn btn-ghost btn-lg" href="https://github.com/martinjanicek/slatly" target="_blank" rel="noopener" data-i18n="cta.secondary">View on GitHub</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <span class="brand-mark" aria-hidden="true">
+                    <span class="brand-mark-slat"></span>
+                    <span class="brand-mark-slat"></span>
+                    <span class="brand-mark-slat"></span>
+                </span>
+                <span>Slatly</span>
+            </div>
+            <p class="footer-fineprint" data-i18n="footer.fineprint">Slatly is an independent project not affiliated with or endorsed by Somfy SA. Somfy®, TaHoma®, Connexoon® and Cozytouch® are trademarks of their respective owners.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

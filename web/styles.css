@@ -1,0 +1,1192 @@
+/* === Reset & tokens === */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.55;
+}
+
+/* Brand display font — gives Slatly a distinctive typographic identity on the
+   wordmark + section headings. */
+:root { --brand-font: "Bricolage Grotesque", -apple-system, BlinkMacSystemFont, system-ui, sans-serif; }
+.brand-name,
+.footer-brand,
+h1, h2 {
+    font-family: var(--brand-font);
+}
+.brand-name {
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: -0.02em;
+}
+h1, h2 {
+    font-weight: 700;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+ul, ol { padding: 0; margin: 0; list-style: none; }
+
+:root {
+    --bg: #0b0f24;
+    --bg-2: #111733;
+    --surface: #1a2147;
+    --surface-2: #232c5b;
+    --border: rgba(255,255,255,0.08);
+    --ink: #f1f3fb;
+    --ink-2: #b5bbd9;
+    --ink-3: #7a82a8;
+    --accent: #62b3ff;
+    --accent-2: #8be1ff;
+    --accent-deep: #1f5bff;
+    --gold: #ffd87a;
+    --container: 1120px;
+    --radius: 14px;
+    --radius-lg: 22px;
+}
+
+/* === Layout primitives === */
+.container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0 0 12px;
+}
+
+h1, h2, h3 {
+    margin: 0 0 16px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+h1 { font-size: clamp(34px, 5.6vw, 64px); }
+h2 { font-size: clamp(28px, 3.4vw, 42px); }
+h3 { font-size: 20px; }
+
+p { margin: 0 0 14px; color: var(--ink-2); }
+
+/* === Top bar === */
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: saturate(150%) blur(14px);
+    -webkit-backdrop-filter: saturate(150%) blur(14px);
+    background: rgba(11, 15, 36, 0.72);
+    border-bottom: 1px solid var(--border);
+}
+.topbar-inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    color: var(--ink);
+}
+.brand-name { letter-spacing: -0.01em; }
+.brand-mark {
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2px 0;
+}
+.brand-mark-slat {
+    height: 3px;
+    border-radius: 2px;
+    background: linear-gradient(180deg, var(--accent-2), var(--accent));
+}
+.topnav {
+    display: flex;
+    gap: 22px;
+    margin-left: auto;
+    align-items: center;
+    color: var(--ink-2);
+    font-size: 14px;
+    font-weight: 500;
+}
+.topnav a:hover { color: var(--ink); }
+.topnav-github {
+    padding: 6px 12px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+}
+.lang-switcher { position: relative; }
+.lang-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--ink-2);
+    border-radius: 999px;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.lang-btn:hover { color: var(--ink); border-color: rgba(255,255,255,0.18); }
+.lang-menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 6px;
+    min-width: 140px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.4);
+}
+.lang-menu li button {
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    color: var(--ink-2);
+    padding: 8px 10px;
+    border-radius: 8px;
+    font: inherit;
+    font-size: 14px;
+    cursor: pointer;
+}
+.lang-menu li button:hover { background: var(--surface-2); color: var(--ink); }
+
+/* === Hero === */
+.hero { position: relative; overflow: hidden; padding: 80px 0 120px; }
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(70% 60% at 20% 0%, rgba(98, 179, 255, 0.18), transparent 60%),
+        radial-gradient(60% 50% at 80% 10%, rgba(139, 225, 255, 0.12), transparent 60%),
+        linear-gradient(180deg, #0c1230 0%, #0b0f24 100%);
+}
+.hero-glow {
+    position: absolute;
+    top: 10%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(closest-side, rgba(98, 179, 255, 0.18), transparent);
+    filter: blur(20px);
+}
+.hero-inner {
+    position: relative;
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
+}
+.hero-text { max-width: 620px; }
+.hero-sub {
+    font-size: 18px;
+    color: var(--ink-2);
+    margin-bottom: 28px;
+    max-width: 540px;
+}
+.hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 22px; }
+.hero-meta {
+    font-size: 13px;
+    color: var(--ink-3);
+}
+
+/* Hero composition: a real window with venetian blinds in the back, the Apple
+   Watch app overlaid in the foreground driving them. Both blinds share the
+   exact same keyframes / delays so the watch UI visibly causes the window. */
+.hero-art {
+    display: flex;
+    justify-content: center;
+    padding-right: 160px; /* room for the watch + crown callout */
+    perspective: 1400px;
+}
+.scene {
+    position: relative;
+    width: 340px;
+    height: 420px;
+    transform-style: preserve-3d;
+}
+
+/* Real window in the back: a proper casing (frame) with a glass pane recessed
+   inside, a vertical mullion splitting the panes, and a chunky window sill at
+   the bottom. */
+.window-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 320px;
+    height: 380px;
+    border-radius: 6px;
+    padding: 16px 16px 0;
+    background:
+        linear-gradient(180deg, #3c4048 0%, #2a2d34 55%, #1f2228 100%);
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.10),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.6),
+        0 0 0 1px rgba(0, 0, 0, 0.55);
+    overflow: hidden;
+    transform: rotateY(6deg) rotateX(2deg) translateZ(-30px);
+    transform-origin: left center;
+}
+.window-frame::before {
+    /* very subtle brushed-aluminium stripe along the casing */
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+        180deg,
+        transparent 0,
+        transparent 7px,
+        rgba(255, 255, 255, 0.02) 7px,
+        rgba(255, 255, 255, 0.02) 8px
+    );
+    pointer-events: none;
+    border-radius: inherit;
+}
+
+/* The actual glass pane sits inside the frame */
+.window-pane {
+    position: relative;
+    width: 100%;
+    height: 308px;
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow:
+        inset 0 0 0 1px rgba(0, 0, 0, 0.75),
+        inset 0 2px 8px rgba(0, 0, 0, 0.45),
+        0 1px 0 rgba(255, 255, 255, 0.08);
+}
+.window-pane::after {
+    /* faint diagonal glass sheen */
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        125deg,
+        rgba(255, 255, 255, 0.16) 0%,
+        rgba(255, 255, 255, 0) 35%,
+        rgba(255, 255, 255, 0) 65%,
+        rgba(255, 255, 255, 0.06) 100%
+    );
+    pointer-events: none;
+    z-index: 4;
+}
+
+/* Window sill — thin chunky band at the bottom, same anthracite as frame */
+.window-sill {
+    position: absolute;
+    left: -8px;
+    right: -8px;
+    bottom: 0;
+    height: 22px;
+    background: linear-gradient(180deg, #34373f 0%, #1a1c22 100%);
+    border-radius: 3px;
+    box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12),
+        inset 0 -2px 3px rgba(0, 0, 0, 0.45);
+    z-index: 3;
+}
+
+/* Horizontal mullion splits the pane visually in two, top/bottom */
+.window-mullion {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 4px;
+    background: linear-gradient(180deg, #3a3d44 0%, #1d1f25 100%);
+    transform: translateY(-50%);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.08),
+        0 0 4px rgba(0, 0, 0, 0.6);
+    z-index: 3;
+    pointer-events: none;
+}
+
+.window-sky {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, #6ba7ff 0%, #2c5fc4 100%);
+    overflow: hidden;
+}
+.window-sun {
+    position: absolute;
+    top: 22px;
+    right: 26px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #fff5c5, #ffd87a 50%, rgba(255, 216, 122, 0) 75%);
+    filter: blur(0.4px);
+    animation: sunPulse 6s ease-in-out infinite;
+    z-index: 1;
+}
+@keyframes sunPulse {
+    0%, 100% { transform: scale(1); filter: blur(0.4px) brightness(1); }
+    50% { transform: scale(1.06); filter: blur(0.6px) brightness(1.18); }
+}
+
+/* Drifting clouds — two of them, different sizes, different timing */
+.cloud {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 50%;
+    box-shadow:
+        18px 5px 0 -2px rgba(255, 255, 255, 0.92),
+        -18px 5px 0 -4px rgba(255, 255, 255, 0.92),
+        32px 10px 0 -6px rgba(255, 255, 255, 0.92),
+        -32px 10px 0 -8px rgba(255, 255, 255, 0.92),
+        0 -4px 0 -3px rgba(255, 255, 255, 0.85);
+    z-index: 1;
+    opacity: 0.92;
+    filter: blur(0.4px);
+}
+.cloud-1 {
+    width: 44px;
+    height: 18px;
+    top: 50px;
+    left: -80px;
+    animation: cloudDrift 24s linear infinite;
+}
+.cloud-2 {
+    width: 36px;
+    height: 14px;
+    top: 130px;
+    left: -70px;
+    animation: cloudDrift 32s linear infinite;
+    animation-delay: -10s;
+    opacity: 0.78;
+}
+@keyframes cloudDrift {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(380px); }
+}
+
+/* Birds — small V-shapes that drift across the sky and bob up + down */
+.bird {
+    position: absolute;
+    width: 22px;
+    height: 10px;
+    z-index: 2;
+    overflow: visible;
+}
+.bird path {
+    animation: birdFlap 0.45s ease-in-out infinite;
+    transform-origin: 50% 50%;
+}
+.bird-1 {
+    top: 70px;
+    left: -30px;
+    animation: birdsFly1 16s linear infinite;
+}
+.bird-2 {
+    width: 16px;
+    height: 8px;
+    top: 95px;
+    left: -40px;
+    animation: birdsFly2 20s linear infinite;
+    animation-delay: -5s;
+}
+.bird-2 path { animation-duration: 0.55s; }
+
+@keyframes birdsFly1 {
+    0%   { transform: translate(0, 0); }
+    50%  { transform: translate(160px, -12px); }
+    100% { transform: translate(330px, -8px); }
+}
+@keyframes birdsFly2 {
+    0%   { transform: translate(0, 0); }
+    50%  { transform: translate(180px, 14px); }
+    100% { transform: translate(340px, 6px); }
+}
+@keyframes birdFlap {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(0.4); }
+}
+
+.blind {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+.slat {
+    flex: 1;
+    background: linear-gradient(180deg, #4d5159 0%, #2a2d34 70%, #1e2026 100%);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.55);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.10),
+        0 1px 0 rgba(0, 0, 0, 0.35);
+    transform-origin: center top;
+    animation: slatTilt 5s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 60ms);
+}
+.slat:last-child { border-bottom: none; }
+
+@keyframes slatTilt {
+    0%, 100% { transform: scaleY(1) translateZ(0); opacity: 1; }
+    25% { transform: scaleY(0.18); opacity: 0.78; }
+    50% { transform: scaleY(0.55); opacity: 0.92; }
+    75% { transform: scaleY(0.18); opacity: 0.78; }
+}
+
+/* Hero watch: reuses the shared device-watch styling (strap + case + screen +
+   crown nub from way below in the file) and only adds hero-specific extras:
+   3D tilt, floating animation, brighter crown glow + ridge motion. */
+.hero-watch {
+    position: absolute;
+    right: -40px;
+    bottom: -10px;
+    width: 160px;
+    transform: rotateY(-8deg) rotateX(4deg) translateZ(60px);
+    transform-origin: right center;
+    animation: watchFloat 5s ease-in-out infinite;
+    filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.55));
+    z-index: 3;
+}
+.hero-watch .watch-case { width: 160px; height: 192px; border-radius: 38px; }
+.hero-watch .watch-screen { inset: 10px; border-radius: 30px; }
+.hero-watch .watch-strap { width: 110px; height: 30px; }
+.hero-watch .watch-crown-nub.hero-crown-nub {
+    top: 72px;
+    height: 36px;
+    width: 12px;
+    right: -10px;
+    overflow: visible;
+}
+.hero-watch .watch-crown-nub.hero-crown-nub::after {
+    /* Soft blue glow ring that pulses behind the crown to draw the eye. */
+    content: "";
+    position: absolute;
+    inset: -10px;
+    border-radius: inherit;
+    background: radial-gradient(
+        closest-side,
+        rgba(98, 179, 255, 0.55),
+        rgba(98, 179, 255, 0) 70%
+    );
+    z-index: -1;
+    animation: crownGlow 2.4s ease-in-out infinite;
+}
+.crown-ridges-overlay {
+    position: absolute;
+    left: 2px;
+    right: 0;
+    top: -4px;
+    bottom: -4px;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.65) 0,
+        rgba(0, 0, 0, 0.65) 1px,
+        transparent 1px,
+        transparent 4px
+    );
+    animation: crownSpin 2.4s linear infinite;
+}
+@keyframes watchFloat {
+    0%, 100% { transform: rotateY(-8deg) rotateX(4deg) translateZ(60px) translateY(0); }
+    50% { transform: rotateY(-8deg) rotateX(4deg) translateZ(60px) translateY(-6px); }
+}
+@keyframes crownSpin {
+    /* Rolling the ridge texture downward fakes a clockwise rotation when the
+       cylinder is viewed from the side. 4px = one ridge cycle. */
+    from { transform: translateY(0); }
+    to   { transform: translateY(4px); }
+}
+@keyframes crownGlow {
+    0%, 100% { opacity: 0.35; transform: scale(1); }
+    50% { opacity: 0.95; transform: scale(1.18); }
+}
+
+/* Tiny app UI inside the watch screen: brand label, mini blind that mirrors
+   the big window, and live readout chips. */
+.mini-ui {
+    position: absolute;
+    inset: 14px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: #fff;
+    font: 600 9px/1 -apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif;
+}
+.mini-brand {
+    text-align: center;
+    font-size: 8px;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.55);
+    text-transform: uppercase;
+}
+.mini-blind {
+    flex: 1;
+    border-radius: 8px;
+    background: linear-gradient(180deg, #4a8cff 0%, #1f4dab 100%);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+.mini-blind::before {
+    /* tiny sun glint inside the mini scene */
+    content: "";
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #fff5c5, #ffd87a 55%, rgba(255, 216, 122, 0) 75%);
+    animation: sunPulse 6s ease-in-out infinite;
+}
+.mini-slat {
+    flex: 1;
+    background: linear-gradient(180deg, rgba(232, 236, 248, 0.94), rgba(170, 180, 210, 0.92));
+    border-bottom: 0.5px solid rgba(20, 30, 60, 0.25);
+    transform-origin: center top;
+    animation: slatTilt 5s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 60ms);
+}
+.mini-slat:last-child { border-bottom: none; }
+.mini-chips {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2px;
+    color: rgba(255, 255, 255, 0.75);
+    font-variant-numeric: tabular-nums;
+}
+.mini-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 9px;
+}
+.mini-chip b {
+    font-weight: 700;
+    color: #fff;
+    animation: chipPulse 5s ease-in-out infinite;
+}
+.mini-tilt { animation-delay: 1.2s !important; }
+.mini-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent-2);
+    box-shadow: 0 0 6px rgba(139, 225, 255, 0.7);
+    animation: dotPulse 1.8s ease-in-out infinite;
+}
+@keyframes chipPulse {
+    0%, 100% { opacity: 0.55; }
+    50% { opacity: 1; }
+}
+@keyframes dotPulse {
+    0%, 100% { opacity: 0.35; transform: scale(0.85); }
+    50% { opacity: 1; transform: scale(1.15); }
+}
+
+/* Callout is positioned RELATIVE TO THE CROWN NUB itself — that way the
+   horizontal connector line always points exactly at the cylinder, regardless
+   of watch size or rotation. */
+.crown-callout {
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--accent-2);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    pointer-events: none;
+    white-space: nowrap;
+    text-shadow: 0 1px 6px rgba(11, 15, 36, 0.6);
+    z-index: 10;
+}
+.crown-callout::before {
+    /* Connector line from the crown to the label. */
+    content: "";
+    display: block;
+    width: 18px;
+    height: 1.5px;
+    background: linear-gradient(90deg, var(--accent-2), rgba(139, 225, 255, 0));
+    border-radius: 1px;
+    margin-left: -14px; /* eat the gap and start right at the crown */
+}
+.crown-arrow {
+    display: inline-block;
+    font-size: 18px;
+    line-height: 1;
+    animation: crownArrowSpin 2.4s linear infinite;
+    transform-origin: 50% 55%;
+}
+.crown-label { white-space: nowrap; }
+@keyframes crownArrowSpin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+/* === Buttons === */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 22px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 15px;
+    border: 1px solid transparent;
+    transition: transform 120ms ease, background 200ms ease, border-color 200ms ease;
+    cursor: pointer;
+}
+.btn-lg { padding: 14px 28px; font-size: 16px; }
+.btn-primary {
+    background: linear-gradient(180deg, var(--accent), var(--accent-deep));
+    color: #fff;
+    box-shadow: 0 12px 30px -10px rgba(31, 91, 255, 0.55), inset 0 1px 0 rgba(255,255,255,0.18);
+}
+.btn-primary:hover { transform: translateY(-1px); }
+.btn-ghost {
+    border-color: var(--border);
+    color: var(--ink);
+}
+.btn-ghost:hover { border-color: rgba(255,255,255,0.18); background: rgba(255,255,255,0.04); }
+
+/* === Sections === */
+section { padding: 84px 0; }
+
+/* Features */
+.features { background: linear-gradient(180deg, #0b0f24 0%, #0c132e 100%); }
+.feature-grid {
+    margin-top: 36px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+.feature-card {
+    padding: 28px;
+    background: linear-gradient(180deg, var(--surface), var(--bg-2));
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    position: relative;
+    overflow: hidden;
+}
+.feature-card::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    pointer-events: none;
+    background: linear-gradient(135deg, rgba(98, 179, 255, 0.16), transparent 35%);
+    opacity: 0;
+    transition: opacity 200ms ease;
+}
+.feature-card:hover::after { opacity: 1; }
+.feature-icon {
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(98, 179, 255, 0.14);
+    color: var(--accent-2);
+    margin-bottom: 16px;
+}
+.feature-icon svg { width: 22px; height: 22px; stroke-linecap: round; stroke-linejoin: round; }
+.feature-card h3 { color: var(--ink); }
+.feature-card p { color: var(--ink-2); margin: 0; }
+
+/* Showcase */
+.showcase { background: var(--bg); }
+.showcase .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+.showcase-art {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 460px;
+    perspective: 1400px;
+}
+.showcase-art .device-watch {
+    width: 200px;
+    margin: 0;
+    position: absolute;
+    transition: transform 200ms ease;
+}
+.showcase-art .watch-case { width: 200px; height: 240px; border-radius: 48px; }
+.showcase-art .watch-screen { inset: 12px; border-radius: 38px; }
+.showcase-art .watch-strap { width: 138px; height: 36px; }
+.showcase-art .watch-crown-nub { top: 88px; height: 40px; width: 13px; right: -10px; }
+.showcase-art .watch-a {
+    /* py-a is driven by scroll (set in script.js); falls back to 0. */
+    transform: translateX(-110px) translateY(var(--py-a, 0px)) rotate(-7deg);
+    z-index: 1;
+    will-change: transform;
+}
+.showcase-art .watch-b {
+    transform: translateX(110px) translateY(var(--py-b, 0px)) rotate(7deg) translateZ(40px);
+    z-index: 2;
+    filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.5));
+    will-change: transform;
+}
+
+/* === CSS mock UI inside the watch screens === */
+.mock-watch {
+    position: absolute;
+    inset: 0;
+    padding: 14px 10px 10px;
+    color: #fff;
+    font: 600 10px/1.2 -apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.mock-statusbar {
+    text-align: center;
+    line-height: 1.1;
+}
+.mock-time { display: block; font-size: 11px; font-weight: 700; color: #fff; }
+.mock-title { display: block; font-size: 10px; font-weight: 600; color: var(--accent-2); margin-top: 1px; }
+
+/* List variant */
+.mock-list .mock-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-top: 2px;
+}
+.mock-list .mock-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 7px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    font-size: 10px;
+    font-weight: 600;
+}
+.mock-list .dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+.dot-anth { background: linear-gradient(180deg, #4d5159, #2a2d34); }
+.dot-beige { background: linear-gradient(180deg, #d2c39a, #a59377); }
+.mock-list .mock-tiles {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 4px;
+    margin-top: auto;
+}
+.mock-tile {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    height: 28px;
+    padding: 0 8px;
+    border-radius: 8px;
+    font-size: 9px;
+    font-weight: 700;
+    color: #fff;
+}
+.mock-tile-scene {
+    background: linear-gradient(180deg, var(--accent), var(--accent-deep));
+}
+.mock-tile-icon { font-size: 11px; }
+.mock-tile-my {
+    background: linear-gradient(180deg, #ffd87a, #d39b00);
+    color: rgba(0, 0, 0, 0.85);
+    width: 28px;
+    padding: 0;
+    font-size: 13px;
+}
+.mock-tile-stop {
+    background: linear-gradient(180deg, #ff5b5b, #b91d1d);
+    color: #fff;
+    width: 28px;
+    padding: 0;
+    font-size: 11px;
+}
+
+/* Detail variant */
+.mock-detail .mock-blind {
+    flex: 1;
+    margin-top: 4px;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #4a8cff 0%, #1f4dab 100%);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+.mock-detail .mock-slat {
+    flex: 1;
+    background: linear-gradient(180deg, #4d5159 0%, #2a2d34 70%, #1e2026 100%);
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.55);
+}
+.mock-detail .mock-slat:last-child { border-bottom: none; }
+.mock-bottom-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4px;
+    padding: 0 2px;
+}
+.mock-chip {
+    font-size: 10px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.85);
+    font-variant-numeric: tabular-nums;
+}
+.mock-star {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 18px;
+    border-radius: 9px;
+    background: rgba(var(--accent-rgb, 98, 179, 255), 0.18);
+    color: var(--accent-2);
+    font-size: 12px;
+}
+
+/* How it works */
+.howto { background: linear-gradient(180deg, #0c132e 0%, #0b0f24 100%); }
+.howto-steps {
+    margin-top: 36px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    counter-reset: step;
+}
+.howto-steps li {
+    padding: 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.howto-steps li > h3,
+.howto-steps li > p { width: 100%; }
+.howto-steps li > p { text-align: center; }
+
+/* All three howto images render at the same fixed size and aspect ratio so the
+   step number badges + headings line up across the row regardless of what's in
+   the image. User-supplied artwork lives in assets/step{1,2,3}-{lang}.png. */
+.howto-img {
+    width: 100%;
+    max-width: 280px;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 16px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+.step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+    background: linear-gradient(180deg, var(--accent), var(--accent-deep));
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+/* === Device frames (iPhone + Apple Watch) ===
+   Every step card reserves the same vertical area for the device render so
+   the step number + heading line up across the row regardless of which device
+   is shown. */
+.device-frame {
+    margin: 0 auto 20px;
+    min-height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* iPhone — top-half slab with fixed dimensions. Chassis has rounded corners
+   only on top; bottom is flat so it reads as "phone peeking up from below the
+   card edge". Image is object-fit:cover with top alignment to show the login
+   header + form, never the dead whitespace below it. */
+.device-iphone {
+    position: relative;
+    width: 158px;
+    height: 232px;
+    background: linear-gradient(140deg, #2a2d34 0%, #14161f 100%);
+    border-radius: 28px 28px 0 0;
+    padding: 8px 8px 0;
+    box-shadow:
+        0 24px 50px rgba(0, 0, 0, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12),
+        0 0 0 1px rgba(255, 255, 255, 0.04);
+    box-sizing: border-box;
+}
+.iphone-island { display: none; }
+
+.iphone-screen {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #f1f2f6;
+    border-radius: 22px 22px 0 0;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.4);
+}
+.iphone-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+}
+
+/* Apple Watch — case with two strap segments */
+.device-watch {
+    width: 180px;
+}
+.watch-strap {
+    display: block;
+    width: 124px;
+    height: 32px;
+    background:
+        linear-gradient(180deg, #34373f 0%, #1d1f25 100%),
+        repeating-linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.18) 0 1px,
+            transparent 1px 4px
+        );
+    background-blend-mode: overlay;
+    border-radius: 8px;
+    position: relative;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.08),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.5);
+}
+.watch-strap::before {
+    content: "";
+    position: absolute;
+    inset: 5px 10px;
+    border: 1px dashed rgba(0, 0, 0, 0.45);
+    border-radius: 3px;
+    pointer-events: none;
+}
+.watch-strap-top {
+    border-radius: 8px 8px 3px 3px;
+}
+.watch-strap-bottom {
+    border-radius: 3px 3px 8px 8px;
+}
+.watch-case {
+    position: relative;
+    display: block;
+    width: 180px;
+    height: 216px;
+    margin: -8px 0;
+    background: linear-gradient(140deg, #2e313d 0%, #14161f 100%);
+    border-radius: 44px;
+    box-shadow:
+        0 24px 48px rgba(0, 0, 0, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.16),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.55),
+        0 0 0 1px rgba(255, 255, 255, 0.04);
+    z-index: 2;
+}
+.watch-screen {
+    position: absolute;
+    inset: 10px;
+    background: #000;
+    border-radius: 34px;
+    overflow: hidden;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.7);
+}
+.watch-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.watch-crown-nub {
+    position: absolute;
+    right: -10px;
+    top: 78px;
+    width: 12px;
+    height: 36px;
+    background: linear-gradient(
+        90deg,
+        #2a2c34 0%,
+        #6a6d7e 50%,
+        #2a2c34 100%
+    );
+    border-radius: 2px 6px 6px 2px;
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+.watch-crown-nub::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 0 2px;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.55) 0 1px,
+        transparent 1px 3px
+    );
+    border-radius: inherit;
+}
+
+/* FAQ */
+.faq { background: var(--bg); }
+.faq-list {
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.faq-list details {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+}
+.faq-list summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--ink);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after {
+    content: "+";
+    font-size: 22px;
+    color: var(--ink-3);
+    transition: transform 160ms ease;
+}
+.faq-list details[open] summary::after { content: "−"; }
+.faq-list details p {
+    margin: 10px 0 0;
+    color: var(--ink-2);
+}
+
+/* CTA */
+.cta {
+    background: linear-gradient(135deg, #1a2a6a 0%, #0e1530 100%);
+    text-align: center;
+}
+.cta h2 { font-size: clamp(28px, 3.4vw, 40px); }
+.cta-buttons {
+    margin-top: 24px;
+    display: inline-flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Footer */
+.footer {
+    padding: 36px 0;
+    background: #08091c;
+    border-top: 1px solid var(--border);
+}
+.footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    text-align: center;
+}
+.footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: var(--ink);
+}
+.footer-fineprint {
+    margin: 0;
+    color: var(--ink-3);
+    font-size: 12px;
+    max-width: 720px;
+}
+
+/* === Responsive === */
+@media (max-width: 900px) {
+    .hero { padding: 56px 0 80px; }
+    .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero-art { justify-self: center; }
+    .feature-grid { grid-template-columns: 1fr; }
+    .showcase .container { grid-template-columns: 1fr; gap: 40px; }
+    .howto-steps { grid-template-columns: 1fr; }
+    .topnav { display: none; }
+    section { padding: 64px 0; }
+}
+
+@media (max-width: 560px) {
+    .hero-art { padding-right: 100px; }
+    .scene { width: 280px; height: 360px; }
+    .window-frame { width: 250px; height: 310px; }
+    .hero-watch { width: 170px; right: -32px; bottom: -8px; }
+    .hero-watch .watch-case { width: 170px; height: 204px; border-radius: 40px; }
+    .hero-watch .watch-screen { inset: 10px; border-radius: 32px; }
+    .hero-watch .watch-crown-nub.hero-crown-nub { top: 76px; height: 38px; width: 12px; }
+    .crown-callout { font-size: 10px; margin-left: 8px; }
+    h1 { font-size: 36px; }
+}
+
+/* === Reduced motion === */
+@media (prefers-reduced-motion: reduce) {
+    .slat, .mini-slat { animation: none; transform: scaleY(0.6); }
+    .crown-ridges-overlay, .crown-arrow, .hero-watch, .window-sun,
+    .mini-chip b, .mini-dot, .mini-blind::before { animation: none; }
+}

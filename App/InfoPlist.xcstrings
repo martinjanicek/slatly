@@ -1,0 +1,28 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "CFBundleDisplayName" : {
+      "comment" : "Bundle display name",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : { "stringUnit" : { "state" : "translated", "value" : "Slatly" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Slatly" } },
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Slatly" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Slatly" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Slatly" } }
+      }
+    },
+    "CFBundleName" : {
+      "comment" : "Bundle name",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : { "stringUnit" : { "state" : "translated", "value" : "Slatly" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Slatly" } },
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Slatly" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Slatly" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Slatly" } }
+      }
+    }
+  },
+  "version" : "1.0"
+}

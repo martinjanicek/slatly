@@ -21,16 +21,16 @@ struct LoginView: View {
                     .foregroundStyle(.tint)
 
                 VStack(spacing: 4) {
-                    Text("Žaluzky")
+                    Text("Slatly")
                         .font(.largeTitle.bold())
-                    Text("Přihlášení do Somfy / TaHoma")
+                    Text("Sign in to Somfy / TaHoma")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                 }
 
                 VStack(alignment: .leading, spacing: 12) {
                     VStack(alignment: .leading, spacing: 6) {
-                        Text("E-mail").font(.caption).foregroundStyle(.secondary)
+                        Text("Email").font(.caption).foregroundStyle(.secondary)
                         TextField("you@example.com", text: $username)
                             .textContentType(.username)
                             .keyboardType(.emailAddress)
@@ -43,7 +43,7 @@ struct LoginView: View {
                             .background(RoundedRectangle(cornerRadius: 10).fill(.quaternary))
                     }
                     VStack(alignment: .leading, spacing: 6) {
-                        Text("Heslo").font(.caption).foregroundStyle(.secondary)
+                        Text("Password").font(.caption).foregroundStyle(.secondary)
                         SecureField("•••••••", text: $password)
                             .textContentType(.password)
                             .focused($focusedField, equals: .password)
@@ -67,7 +67,7 @@ struct LoginView: View {
                     if signingIn {
                         ProgressView().controlSize(.regular).tint(.white)
                     } else {
-                        Text("Přihlásit")
+                        Text("Sign in")
                             .fontWeight(.semibold)
                             .frame(maxWidth: .infinity)
                     }
@@ -76,7 +76,7 @@ struct LoginView: View {
                 .controlSize(.large)
                 .disabled(username.isEmpty || password.isEmpty || signingIn)
 
-                Text("Po přihlášení se přihlašovací údaje uloží do iCloud Klíčenky a přenesou se na tvé Apple Watch (i bez iPhonu).")
+                Text("After signing in, credentials are saved to iCloud Keychain and synced to your Apple Watch (even without an iPhone nearby).")
                     .font(.footnote)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
@@ -96,7 +96,7 @@ struct LoginView: View {
         signingIn = false
         if case .failure(let err) = result {
             switch err {
-            case .badCredentials: errorMessage = "Špatný email nebo heslo"
+            case .badCredentials: errorMessage = String(localized: "Wrong email or password")
             case .other(let msg): errorMessage = msg
             }
         }

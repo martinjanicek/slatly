@@ -1,11 +1,6 @@
 import SwiftUI
 import OverkizKit
 
-/// Marker route used by NavigationStack to push the bulk-control screen.
-struct AllBlindsRoute: Hashable {}
-
-/// TiltView for "all blinds at once" — same crown/drag affordances, but every
-/// setClosureAndOrientation / my call fans out across all devices in parallel.
 struct BulkTiltView: View {
     let client: OverkizClient
     let devices: [OverkizDevice]
@@ -32,57 +27,77 @@ struct BulkTiltView: View {
     }
 
     var body: some View {
-        VStack(spacing: 4) {
+        VStack(spacing: 16) {
             BlindsGraphic(closure: closure, tilt: tilt, theme: .classic)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .frame(maxWidth: 360, maxHeight: 380)
                 .contentShape(Rectangle())
                 .gesture(closureDrag)
                 .animation(.snappy(duration: 0.18), value: closure)
                 .animation(.snappy(duration: 0.18), value: tilt)
+                .padding(.horizontal)
 
-            HStack(spacing: 0) {
-                chip(systemImage: "arrow.up.and.down", value: Int(closure))
-                Spacer(minLength: 0)
-                HStack(spacing: 6) {
-                    Button { Task { await sendMy() } } label: {
-                        Image(systemName: "star.fill")
-                            .font(.system(size: 14, weight: .semibold))
-                            .foregroundStyle(.tint)
-                            .frame(width: 44, height: 28)
-                            .background(
-                                Capsule().fill(.tint.opacity(0.18))
-                            )
-                            .contentShape(Capsule())
-                    }
-                    .buttonStyle(.plain)
-                    statusIndicator
-                }
-                Spacer(minLength: 0)
-                chip(systemImage: "rectangle.compress.vertical", value: Int(tilt))
+            VStack(spacing: 12) {
+                sliderRow(icon: "arrow.up.and.down", label: "Closure", value: $closure, suffix: "%")
+                sliderRow(icon: "rectangle.compress.vertical", label: "Tilt", value: $tilt, suffix: "")
             }
-            .frame(height: 30)
+            .padding(.horizontal)
+
+            HStack(spacing: 14) {
+                Button {
+                    Task { await sendMy() }
+                } label: {
+                    Label("My", systemImage: "star.fill")
+                        .frame(maxWidth: .infinity)
+                }
+                .buttonStyle(.bordered)
+
+                Button {
+                    Task { await sendStop() }
+                } label: {
+                    Label("Stop", systemImage: "stop.fill")
+                        .frame(maxWidth: .infinity)
+                }
+                .buttonStyle(.bordered)
+                .tint(.red)
+
+                statusIndicator
+                    .frame(width: 24)
+            }
+            .padding(.horizontal)
+            .padding(.bottom)
         }
-        .padding(.horizontal, 4)
-        .padding(.vertical, 2)
-        .focusable()
-        .digitalCrownRotation(
-            $tilt,
-            from: 0, through: 100, by: 1,
-            sensitivity: .high,
-            isContinuous: false,
-            isHapticFeedbackEnabled: true
-        )
+        .navigationTitle(Text("All (\(devices.count))"))
+        .navigationBarTitleDisplayMode(.inline)
+        .onChange(of: closure) { _, _ in scheduleSend() }
         .onChange(of: tilt) { _, _ in scheduleSend() }
         .sensoryFeedback(.error, trigger: status == .failed)
-        .navigationTitle(Text("All (\(devices.count))"))
+    }
+
+    private func sliderRow(
+        icon: String,
+        label: LocalizedStringKey,
+        value: Binding<Double>,
+        suffix: String
+    ) -> some View {
+        VStack(spacing: 4) {
+            HStack {
+                Label(label, systemImage: icon)
+                    .font(.subheadline.weight(.medium))
+                Spacer()
+                Text("\(Int(value.wrappedValue))\(suffix)")
+                    .font(.subheadline.monospacedDigit())
+                    .foregroundStyle(.secondary)
+            }
+            Slider(value: value, in: 0...100, step: 1)
+        }
     }
 
     private var closureDrag: some Gesture {
-        DragGesture(minimumDistance: 2)
+        DragGesture(minimumDistance: 4)
             .onChanged { value in
                 if dragStartClosure == nil { dragStartClosure = closure }
                 let start = dragStartClosure ?? closure
-                let delta = value.translation.height * 0.7
+                let delta = value.translation.height * 0.35
                 closure = max(0, min(100, start + delta))
             }
             .onEnded { _ in
@@ -95,27 +110,16 @@ struct BulkTiltView: View {
     private var statusIndicator: some View {
         switch status {
         case .idle:
-            Circle().fill(.secondary.opacity(0.3)).frame(width: 6, height: 6)
+            Circle().fill(.secondary.opacity(0.3)).frame(width: 8, height: 8)
         case .sending:
-            ProgressView().controlSize(.mini)
+            ProgressView().controlSize(.small)
         case .ok:
             Image(systemName: "checkmark.circle.fill")
                 .foregroundStyle(.green)
-                .font(.caption2)
         case .failed:
             Image(systemName: "exclamationmark.triangle.fill")
                 .foregroundStyle(.red)
-                .font(.caption2)
         }
-    }
-
-    private func chip(systemImage: String, value: Int) -> some View {
-        HStack(spacing: 2) {
-            Image(systemName: systemImage).font(.system(size: 10, weight: .semibold))
-            Text("\(value)").font(.system(size: 12, weight: .semibold, design: .rounded))
-                .monospacedDigit()
-        }
-        .foregroundStyle(.secondary)
     }
 
     private func scheduleSend() {
@@ -124,7 +128,7 @@ struct BulkTiltView: View {
         let t = Int(tilt)
         let urls = devices.map(\.deviceURL)
         sendTask = Task { @MainActor in
-            try? await Task.sleep(for: .milliseconds(280))
+            try? await Task.sleep(for: .milliseconds(320))
             guard !Task.isCancelled else { return }
             status = .sending
             let anyFailed = await fanOut(urls: urls) { url in
@@ -144,7 +148,16 @@ struct BulkTiltView: View {
         status = anyFailed ? .failed : .ok
     }
 
-    /// Returns `true` if any of the parallel sub-tasks threw.
+    private func sendStop() async {
+        sendTask?.cancel()
+        status = .sending
+        let urls = devices.map(\.deviceURL)
+        let anyFailed = await fanOut(urls: urls) { url in
+            _ = try await client.stop(deviceURL: url)
+        }
+        status = anyFailed ? .failed : .ok
+    }
+
     private func fanOut(
         urls: [String],
         _ action: @escaping @Sendable (String) async throws -> Void

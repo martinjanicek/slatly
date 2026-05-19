@@ -5,6 +5,11 @@ struct ZaluzkyApp: App {
     @StateObject private var appState = AppState()
     @Environment(\.scenePhase) private var scenePhase
 
+    init() {
+        // Boot WatchConnectivity so scenes pushed from iPhone arrive promptly.
+        _ = SceneSync.shared
+    }
+
     var body: some Scene {
         WindowGroup {
             Group {
@@ -19,6 +24,7 @@ struct ZaluzkyApp: App {
             .onChange(of: scenePhase) { _, newPhase in
                 if newPhase == .active {
                     appState.refreshFromKeychain()
+                    SceneStore.shared.refresh()
                 }
             }
         }

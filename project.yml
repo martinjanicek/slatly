@@ -16,7 +16,8 @@ settings:
     CODE_SIGN_STYLE: Automatic
     DEVELOPMENT_TEAM: GB4KCN39XD
     MARKETING_VERSION: "0.1.0"
-    CURRENT_PROJECT_VERSION: "6"
+    CURRENT_PROJECT_VERSION: "10"
+    SWIFT_EMIT_LOC_STRINGS: YES
 targets:
   Zaluzky:
     type: application
@@ -24,8 +25,12 @@ targets:
     deploymentTarget: "17.0"
     sources:
       - path: iOS
+      - path: Shared
     dependencies:
       - target: ZaluzkyWatch
+        embed: true
+        codeSign: true
+      - target: ZaluzkyiOSWidgets
         embed: true
         codeSign: true
       - package: OverkizKit
@@ -37,19 +42,28 @@ targets:
         TARGETED_DEVICE_FAMILY: "1,2"
         ENABLE_PREVIEWS: YES
         GENERATE_INFOPLIST_FILE: YES
-        INFOPLIST_KEY_CFBundleDisplayName: "Žaluzky"
+        INFOPLIST_KEY_CFBundleDisplayName: "Slatly"
         INFOPLIST_KEY_UILaunchScreen_Generation: YES
         INFOPLIST_KEY_ITSAppUsesNonExemptEncryption: NO
         INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
         INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: "UIInterfaceOrientationPortrait"
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+    info:
+      path: iOS/Info.plist
+      properties:
+        CFBundleURLTypes:
+          - CFBundleTypeRole: Editor
+            CFBundleURLName: com.punkhive.zaluzky
+            CFBundleURLSchemes:
+              - zaluzky
   ZaluzkyWatch:
     type: application
     platform: watchOS
     deploymentTarget: "10.0"
     sources:
       - path: App
+      - path: Shared
     dependencies:
       - package: OverkizKit
       - target: ZaluzkyWidgets
@@ -63,7 +77,7 @@ targets:
         TARGETED_DEVICE_FAMILY: "4"
         ENABLE_PREVIEWS: YES
         GENERATE_INFOPLIST_FILE: YES
-        INFOPLIST_KEY_CFBundleDisplayName: "Žaluzky"
+        INFOPLIST_KEY_CFBundleDisplayName: "Slatly"
         INFOPLIST_KEY_WKApplication: YES
         INFOPLIST_KEY_WKCompanionAppBundleIdentifier: com.punkhive.zaluzky
         INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp: YES
@@ -86,6 +100,22 @@ targets:
         ENABLE_PREVIEWS: YES
         GENERATE_INFOPLIST_FILE: NO
         INFOPLIST_FILE: WidgetExtension/Info.plist
+        INFOPLIST_KEY_NSHumanReadableCopyright: ""
+  ZaluzkyiOSWidgets:
+    type: app-extension
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: iOSWidgets
+    settings:
+      base:
+        PRODUCT_NAME: ZaluzkyiOSWidgets
+        PRODUCT_BUNDLE_IDENTIFIER: com.punkhive.zaluzky.widgets
+        SKIP_INSTALL: YES
+        TARGETED_DEVICE_FAMILY: "1,2"
+        ENABLE_PREVIEWS: YES
+        GENERATE_INFOPLIST_FILE: NO
+        INFOPLIST_FILE: iOSWidgets/Info.plist
         INFOPLIST_KEY_NSHumanReadableCopyright: ""
 schemes:
   Zaluzky:

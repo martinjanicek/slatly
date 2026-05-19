@@ -7,30 +7,15 @@ final class AppState: ObservableObject {
 
     init() {
         refreshFromKeychain()
-        if client == nil, let migrated = migrateFromSecrets() {
-            CredentialsStore.save(migrated)
-            self.client = OverkizClient(
-                credentials: .init(username: migrated.username, password: migrated.password)
-            )
-        }
     }
 
     /// Re-read Keychain. Useful when scene becomes active and credentials may have
     /// arrived via iCloud Keychain sync from the iOS companion.
     func refreshFromKeychain() {
-        if let creds = CredentialsStore.load() {
-            if let current = client {
-                Task { @MainActor in
-                    // No-op if creds unchanged; client doesn't expose its creds, so
-                    // we just leave it — if creds match they keep working.
-                    _ = current
-                }
-            } else {
-                self.client = OverkizClient(
-                    credentials: .init(username: creds.username, password: creds.password)
-                )
-            }
-        }
+        guard client == nil, let creds = CredentialsStore.load() else { return }
+        self.client = OverkizClient(
+            credentials: .init(username: creds.username, password: creds.password)
+        )
     }
 
     enum SignInResult: Equatable {
@@ -59,15 +44,5 @@ final class AppState: ObservableObject {
     func signOut() {
         CredentialsStore.clear()
         self.client = nil
-    }
-
-    private func migrateFromSecrets() -> CredentialsStore.Credentials? {
-        let user = Secrets.somfyUsername
-        let pw = Secrets.somfyPassword
-        guard !user.isEmpty, user != "you@example.com",
-              !pw.isEmpty, pw != "your-password" else {
-            return nil
-        }
-        return .init(username: user, password: pw)
     }
 }

@@ -3,8 +3,20 @@ import OverkizKit
 
 @MainActor
 final class IOSAppState: ObservableObject {
-    @Published var isSignedIn: Bool = CredentialsStore.load() != nil
-    @Published var savedUsername: String = CredentialsStore.load()?.username ?? ""
+    @Published private(set) var client: OverkizClient?
+    @Published private(set) var savedUsername: String
+
+    init() {
+        if let creds = CredentialsStore.load() {
+            self.savedUsername = creds.username
+            self.client = OverkizClient(credentials: .init(username: creds.username, password: creds.password))
+        } else {
+            self.savedUsername = ""
+            self.client = nil
+        }
+    }
+
+    var isSignedIn: Bool { client != nil }
 
     func signIn(username: String, password: String) async -> Result<Void, SignInError> {
         let trimmed = username.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -20,14 +32,14 @@ final class IOSAppState: ObservableObject {
         }
         CredentialsStore.save(.init(username: trimmed, password: password))
         self.savedUsername = trimmed
-        self.isSignedIn = true
+        self.client = candidate
         return .success(())
     }
 
     func signOut() {
         CredentialsStore.clear()
         self.savedUsername = ""
-        self.isSignedIn = false
+        self.client = nil
     }
 
     enum SignInError: Error, Equatable {

@@ -11,7 +11,7 @@ struct ColorPaletteView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 8) {
-                Text("Barva žaluzie")
+                Text("Blind color")
                     .font(.caption2)
                     .foregroundStyle(.secondary)
 
