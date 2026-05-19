@@ -68,8 +68,3 @@ Two capabilities live in `Entitlements/*.entitlements` but are commented out of 
 
 After enabling those in App Store Connect, uncomment the `CODE_SIGN_ENTITLEMENTS` lines in `project.yml` and rerun `xcodegen generate`.
 
-## Marketing site
-
-Static landing page in `web/`, deployed to [slatly.punkhive.com](https://slatly.punkhive.com) via Cloudflare Pages (project `slatly` in the Punkhive Cloudflare account). 5 languages, no build step, vanilla HTML + CSS + JS. See `web/README.md` for redeploy instructions.
-
-Custom domain CNAME (`slatly.punkhive.com → slatly.pages.dev`) is managed in AWS Route 53.
