@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://slatly.punkhive.com/sitemap.xml
+
+# Be nice to crawlers — nothing to hide, everything to index.

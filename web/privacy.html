@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Privacy Policy — Slatly</title>
+    <meta name="description" content="Slatly's privacy policy: no analytics, no tracking, no servers. Somfy credentials stay in iCloud Keychain on your own devices. Network traffic goes only to Somfy's official OAuth and device-control endpoints.">
+
+    <meta name="author" content="Martin Janíček">
+    <meta name="theme-color" content="#0a1e4d">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://slatly.punkhive.com/privacy.html">
+
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/app-icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/app-icon-512.png">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Slatly">
+    <meta property="og:title" content="Privacy Policy — Slatly">
+    <meta property="og:description" content="No analytics, no tracking, no servers. Slatly stores credentials in iCloud Keychain and talks only to Somfy's official cloud API.">
+    <meta property="og:url" content="https://slatly.punkhive.com/privacy.html">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://slatly.punkhive.com/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Privacy Policy — Slatly">
+    <meta name="twitter:description" content="No analytics, no tracking, no servers. iCloud Keychain only.">
+    <meta name="twitter:image" content="https://slatly.punkhive.com/assets/og-image.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        .legal {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 80px 24px 120px;
+        }
+        .legal h1 { font-size: clamp(32px, 4vw, 44px); margin: 0 0 8px; }
+        .legal .meta { color: var(--ink-3); font-size: 13px; margin-bottom: 36px; }
+        .legal h2 { font-size: 22px; margin: 32px 0 12px; }
+        .legal p { color: var(--ink-2); line-height: 1.7; }
+        .legal ul { color: var(--ink-2); line-height: 1.7; padding-left: 22px; margin: 0 0 14px; list-style: disc; }
+        .legal a { color: var(--accent-2); text-decoration: underline; }
+        .legal .back { display: inline-block; margin-bottom: 20px; color: var(--accent-2); font-size: 14px; }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Privacy Policy — Slatly",
+        "url": "https://slatly.punkhive.com/privacy.html",
+        "description": "Slatly's privacy policy. No analytics, no tracking, no servers. Credentials live in iCloud Keychain only.",
+        "inLanguage": "en",
+        "isPartOf": { "@type": "WebSite", "name": "Slatly", "url": "https://slatly.punkhive.com/" },
+        "publisher": {
+            "@type": "Person",
+            "name": "Martin Janíček",
+            "url": "https://github.com/martinjanicek"
+        },
+        "dateModified": "2026-05-19"
+    }
+    </script>
+</head>
+<body>
+    <main class="legal">
+        <a href="/" class="back">← Back to Slatly</a>
+        <h1>Privacy Policy</h1>
+        <p class="meta">Last updated: 19 May 2026</p>
+
+        <p>
+            Slatly is a watchOS + iOS app that controls Somfy exterior venetian blinds over the official Somfy / Overkiz cloud API. This policy explains what data Slatly handles, where it lives, and what we do (and don't do) with it.
+        </p>
+
+        <h2>The short version</h2>
+        <ul>
+            <li>Slatly collects <strong>no analytics</strong>, no tracking, no advertising identifiers.</li>
+            <li>Slatly does not operate any backend server. The only network calls go directly from your device to <strong>Somfy's official OAuth and device-control endpoints</strong>.</li>
+            <li>Your Somfy / TaHoma credentials are stored locally in <strong>iCloud Keychain</strong> (Apple-managed, end-to-end encrypted under your Apple ID). They are never sent to us.</li>
+            <li>We have no servers, no logs, no database. There is nothing for us to collect even if we wanted to.</li>
+        </ul>
+
+        <h2>What data Slatly uses</h2>
+        <ul>
+            <li><strong>Somfy account credentials</strong> (email + password) — entered by you in the iOS app, stored in iCloud Keychain so they sync to your Apple Watch. Used solely to obtain OAuth tokens from Somfy's official endpoint.</li>
+            <li><strong>Blind device list + state</strong> — fetched on demand from Somfy's API. Cached only in memory while the app is running.</li>
+            <li><strong>Scenes you create</strong> (named presets of closure + tilt per blind) — stored in iCloud Keychain so they sync across your devices.</li>
+            <li><strong>Per-blind preferences</strong> (custom name, slat colour, "My" position override) — stored locally in UserDefaults on each device.</li>
+        </ul>
+
+        <h2>Where the data goes</h2>
+        <ul>
+            <li><strong>Somfy / Overkiz</strong> (<a href="https://www.somfy.com/" target="_blank" rel="noopener">somfy.com</a>) — OAuth login + REST API calls to read and command your blinds. Subject to Somfy's own privacy policy.</li>
+            <li><strong>Apple iCloud Keychain</strong> — credentials + scenes, end-to-end encrypted by Apple, accessible only on devices you sign in to with your Apple ID.</li>
+            <li><strong>Apple WatchConnectivity</strong> — when both your iPhone and paired Apple Watch are reachable, scenes are pushed via WatchConnectivity for immediate sync. Apple-managed channel between your own devices.</li>
+        </ul>
+        <p>Nothing leaves these channels. There is no Slatly server.</p>
+
+        <h2>Permissions Slatly requests</h2>
+        <ul>
+            <li><strong>Network access</strong> — to talk to Somfy's cloud API.</li>
+            <li><strong>iCloud Keychain</strong> — to store credentials + scenes for cross-device sync.</li>
+        </ul>
+        <p>Slatly does not request access to contacts, photos, location, microphone, camera, or any other system service.</p>
+
+        <h2>Children</h2>
+        <p>Slatly is not directed at children and does not knowingly collect any information from anyone.</p>
+
+        <h2>Open source</h2>
+        <p>Slatly is open source. The full source code is published at <a href="https://github.com/martinjanicek/slatly" target="_blank" rel="noopener">github.com/martinjanicek/slatly</a> so you can verify the claims in this policy.</p>
+
+        <h2>Contact</h2>
+        <p>For privacy questions, contact <a href="mailto:punkhive@gmail.com">punkhive@gmail.com</a>.</p>
+
+        <h2>Changes</h2>
+        <p>If this policy changes materially, the "Last updated" date above will change and a notice will appear on the Slatly homepage.</p>
+    </main>
+</body>
+</html>

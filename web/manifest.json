@@ -1,0 +1,52 @@
+{
+    "name": "Slatly — Apple Watch controller for Somfy blinds",
+    "short_name": "Slatly",
+    "description": "Control Somfy exterior venetian blinds straight from Apple Watch. Tilt slats with the Digital Crown, drag to close. Standalone — no iPhone, no hub at runtime.",
+    "id": "/",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "#0e1530",
+    "theme_color": "#0e1530",
+    "lang": "en",
+    "categories": ["lifestyle", "utilities", "productivity"],
+    "icons": [
+        {
+            "src": "/assets/app-icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/assets/app-icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "/assets/watch-list.png",
+            "sizes": "640x800",
+            "type": "image/png",
+            "form_factor": "narrow",
+            "label": "Slatly room list on Apple Watch"
+        },
+        {
+            "src": "/assets/watch-detail.png",
+            "sizes": "640x800",
+            "type": "image/png",
+            "form_factor": "narrow",
+            "label": "Slatly tilt detail on Apple Watch"
+        }
+    ],
+    "related_applications": [
+        {
+            "platform": "itunes",
+            "url": "https://apps.apple.com/us/app/slatly/id6769497680",
+            "id": "6769497680"
+        }
+    ],
+    "prefer_related_applications": true
+}
