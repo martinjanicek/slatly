@@ -37,8 +37,18 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.clarity.ms">
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css">
+
+    <!-- Microsoft Clarity (anonymous visitor analytics, no PII, GDPR-friendly) -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "wtikjupsyk");
+    </script>
     <style>
         .legal {
             max-width: 720px;
@@ -84,7 +94,7 @@
 
         <h2>The short version</h2>
         <ul>
-            <li>Slatly collects <strong>no analytics</strong>, no tracking, no advertising identifiers.</li>
+            <li>The Slatly <strong>app</strong> collects <strong>no analytics</strong>, no tracking, no advertising identifiers. The marketing website you are reading uses Microsoft Clarity for anonymous visitor analytics — see <a href="#marketing-website-analytics">below</a>.</li>
             <li>Slatly does not operate any backend server. The only network calls go directly from your device to <strong>Somfy's official OAuth and device-control endpoints</strong>.</li>
             <li>Your Somfy / TaHoma credentials are stored locally in <strong>iCloud Keychain</strong> (Apple-managed, end-to-end encrypted under your Apple ID). They are never sent to us.</li>
             <li>We have no servers, no logs, no database. There is nothing for us to collect even if we wanted to.</li>
@@ -112,6 +122,9 @@
             <li><strong>iCloud Keychain</strong> — to store credentials + scenes for cross-device sync.</li>
         </ul>
         <p>Slatly does not request access to contacts, photos, location, microphone, camera, or any other system service.</p>
+
+        <h2 id="marketing-website-analytics">This marketing website</h2>
+        <p>The Slatly <strong>app itself</strong> has no analytics. The marketing website you are reading at <code>slatly.punkhive.com</code> uses <strong>Microsoft Clarity</strong> for anonymous visitor analytics (page views, click heatmaps, anonymised session recordings). Clarity does not collect personally identifiable information, does not set advertising cookies, and is GDPR-compliant. Data is processed by Microsoft under their <a href="https://privacy.microsoft.com/" target="_blank" rel="noopener">privacy statement</a>. You can opt out of Microsoft Clarity tracking globally via your browser's Do-Not-Track signal or via <a href="https://docs.microsoft.com/en-us/clarity/setup-and-installation/cookie-consent" target="_blank" rel="noopener">Clarity's cookie consent docs</a>.</p>
 
         <h2>Children</h2>
         <p>Slatly is not directed at children and does not knowingly collect any information from anyone.</p>

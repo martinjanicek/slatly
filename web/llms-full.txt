@@ -103,9 +103,10 @@ UI strings are managed via Xcode 26 string catalogs (`Localizable.xcstrings`); t
 
 ## Privacy and security
 
-- **No analytics.** Slatly has no SDK that reports usage. No Firebase, no Mixpanel, no Crashlytics, no Sentry.
-- **No tracking.** No advertising identifiers, no third-party cookies, no fingerprinting.
+- **No analytics in the app.** Slatly's watchOS + iOS app has no SDK that reports usage. No Firebase, no Mixpanel, no Crashlytics, no Sentry.
+- **No tracking in the app.** No advertising identifiers, no third-party cookies, no fingerprinting.
 - **No backend.** Slatly does not operate any server. There is no `slatly.com/api` — only the static marketing site at `slatly.punkhive.com`.
+- **Marketing site analytics:** the public website at `slatly.punkhive.com` uses Microsoft Clarity for anonymous visitor analytics (heatmaps and session replay, no PII). The app itself is unaffected.
 - **Credentials** live in **iCloud Keychain** (Apple-managed, end-to-end encrypted under the user's Apple ID). They are accessible only on devices the user has signed into with the same Apple ID, and only to Slatly.
 - **Network calls** go only to Somfy / Overkiz official endpoints (`accounts.somfy.com`, `tahomalink.com` / `ha1xxx.overkiz.com` regional shards). No third parties.
 - Slatly is **open source** under MIT — every claim above can be verified by reading the Swift code at https://github.com/martinjanicek/slatly.
